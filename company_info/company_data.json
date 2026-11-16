@@ -1,0 +1,378 @@
+{
+  "company": {
+    "legalName": "Nellys Tech Private Limited",
+    "brandName": "Nellys Tech PVT. LTD.",
+    "shortName": "Nellys Tech",
+    "tagline": "Technology that runs your business. Visibility that grows it.",
+    "subTagline": "One Partner. Every Possibility.",
+    "heroTitle": "Engineering tomorrow’s intelligent tech ecosystems.",
+    "badge": "TECHNOLOGY / INNOVATION / BUSINESS • BUILD / CONNECT / GROW",
+    "deliveryMotto": "Simple. Honest. Perfection.",
+    "establishedYear": 2026
+  },
+  "contact": {
+    "address": {
+      "full": "J-1A, TC 9/479(1) 23/2773, Jawahar Nagar, Kowdiar, Thiruvananthapuram, Kerala 695003",
+      "building": "J-1A, TC 9/479(1) 23/2773",
+      "locality": "Jawahar Nagar, Kowdiar",
+      "city": "Thiruvananthapuram",
+      "state": "Kerala",
+      "postalCode": "695003",
+      "country": "India"
+    },
+    "phone": "0471 2720004",
+    "phoneHref": "tel:04712720004",
+    "email": "nellystechai@gmail.com",
+    "emailHref": "mailto:nellystechai@gmail.com",
+    "website": "nellystech.in",
+    "websiteUrl": "https://nellystech.in"
+  },
+  "branding": {
+    "logos": {
+      "darkTheme": "assets/logos/nellys-logo-for-dark-bg.png",
+      "lightTheme": "assets/logos/nellys-logo-for-light-bg.png"
+    },
+    "colors": {
+      "dark": "#0B0F19",
+      "slate": "#111827",
+      "cyan": "#06B6D4",
+      "indigo": "#6366F1",
+      "blue": "#0284C7",
+      "emerald": "#10B981"
+    }
+  },
+  "about": {
+    "summary": "At Nellys Tech, software engineers, cloud and security specialists work alongside brand, content, and marketing experts. One unified team in Thiruvananthapuram delivering your complete enterprise growth infrastructure.",
+    "vision": "To be the trusted single partner that modern enterprises turn to when they refuse to let fragmented agencies compromise their growth, security, and digital presence.",
+    "mission": [
+      {
+        "title": "Engineering Excellence",
+        "description": "Build reliable, scalable, and maintainable software architectures engineered for 99.99% operational uptime."
+      },
+      {
+        "title": "Creative Precision",
+        "description": "Craft distinct visual brand identities, high-converting copy, and compelling media that resonate with decision-makers."
+      },
+      {
+        "title": "Security by Default",
+        "description": "Bake data privacy, encryption, and Zero Trust security controls into every codebase and network architecture from day one."
+      },
+      {
+        "title": "Partnership Over Transactions",
+        "description": "Act as invested technical and creative co-founders who stand behind client outcomes over the entire business lifecycle."
+      }
+    ],
+    "stats": [
+      { "value": "20", "label": "Unified Capabilities", "sublabel": "10 Branding + 10 IT Solutions" },
+      { "value": "2", "label": "Core Strengths", "sublabel": "One Direction" },
+      { "value": "6", "label": "Promises We Live By", "sublabel": "Clarity, Craft & Reliability" },
+      { "value": "1", "label": "Accountable Partner", "sublabel": "Zero vendor finger-pointing" }
+    ]
+  },
+  "synergy": [
+    {
+      "id": "01",
+      "title": "Build + Protect",
+      "tags": ["DevOps", "Hardening", "Compliance"],
+      "description": "Clean, modular software architecture meets Zero Trust cybersecurity."
+    },
+    {
+      "id": "02",
+      "title": "Attract + Follow Up",
+      "tags": ["SEO", "Paid Social", "CRM Automation"],
+      "description": "Organic search optimization and targeted social marketing paired with automated email funnels and integrated CRMs."
+    },
+    {
+      "id": "03",
+      "title": "Define + Express",
+      "tags": ["Brand Identity", "UI/UX", "Mobile Apps"],
+      "description": "Distinct brand identity, visual guidelines, and value propositions engineered directly into modern web and mobile apps."
+    },
+    {
+      "id": "04",
+      "title": "Record + Amplify",
+      "tags": ["Podcasts", "Video Films", "Short-Form Reels"],
+      "description": "High-impact studio podcasting and 4K cinematic video production transformed into multi-channel thought-leadership clips."
+    }
+  ],
+  "pillars": [
+    {
+      "id": "branding",
+      "number": "I",
+      "name": "Digital Branding",
+      "subtitle": "Executive visibility & digital growth",
+      "tagline": "To shape, publish and grow your brand and reach.",
+      "services": [
+        {
+          "number": "01",
+          "name": "Brand Identity & Logo Design",
+          "headline": "Look Like Who You Really Are",
+          "deliverables": [
+            "Brand discovery and positioning",
+            "Logo design with variations",
+            "Colour palette, typography and visual style",
+            "Brand guidelines and templates",
+            "Stationery, social media and presentation designs"
+          ]
+        },
+        {
+          "number": "02",
+          "name": "Digital Marketing Strategy",
+          "headline": "A Plan, Not Guesswork",
+          "deliverables": [
+            "Audience and competitor research",
+            "Channel selection and messaging framework",
+            "Content and campaign calendar",
+            "Budget and priority recommendations",
+            "Goals, tracking plan and review rhythm"
+          ]
+        },
+        {
+          "number": "03",
+          "name": "SEO & Online Visibility",
+          "headline": "Get Found When It Counts",
+          "deliverables": [
+            "Website and keyword audit",
+            "On-page optimisation of content and structure",
+            "Technical SEO: speed, mobile-friendliness and indexing",
+            "Local SEO and business listing management",
+            "Content recommendations and progress reporting"
+          ]
+        },
+        {
+          "number": "04",
+          "name": "Social Media Management",
+          "headline": "Stay Active - Leave the Stress",
+          "deliverables": [
+            "Profile set-up and optimisation",
+            "Content planning, design and scheduling",
+            "Community engagement and response handling",
+            "Paid social campaign support",
+            "Monthly performance summaries & targeted promotions"
+          ]
+        },
+        {
+          "number": "05",
+          "name": "Content Creation",
+          "headline": "Words and Visuals That Build Trust",
+          "deliverables": [
+            "Website highlights and landing pages",
+            "Blog articles and thought-leadership pieces",
+            "Case studies and company profiles",
+            "Brochures, presentations and one-pagers",
+            "Graphics, infographics and editorial calendars"
+          ]
+        },
+        {
+          "number": "06",
+          "name": "Podcasting & Audio Production",
+          "headline": "Become a Voice Worth Listening To",
+          "deliverables": [
+            "Concept, format and episode planning",
+            "Recording support, presenter support and guest coordination",
+            "Editing, mixing and sound clean-up",
+            "Show notes, cover art and publishing to major platforms",
+            "Short audio clips for social media & live streaming support"
+          ]
+        },
+        {
+          "number": "07",
+          "name": "Video Marketing",
+          "headline": "Show It. Don't Just Tell It.",
+          "deliverables": [
+            "Concept and scripting",
+            "Shooting guidance and editing",
+            "Brand and product videos, explainers and testimonials",
+            "Short clips and long videos for social media platforms",
+            "Captions, thumbnails, publishing support & TV programme concepts"
+          ]
+        },
+        {
+          "number": "08",
+          "name": "E-mail Campaigns",
+          "headline": "Reach People Who Already Know You",
+          "deliverables": [
+            "Mailing-list setup and segmentation guidance",
+            "Newsletter and campaign design",
+            "Copywriting and subject line testing",
+            "Automated welcome and follow-up sequences",
+            "Delivery, open and click reporting"
+          ]
+        },
+        {
+          "number": "09",
+          "name": "Lead Generation",
+          "headline": "More Enquiries. Better Growth.",
+          "deliverables": [
+            "Target audience and offer definition",
+            "Landing pages and lead capture forms",
+            "Search, social and content-driven campaigns",
+            "Lead tracking and follow-up workflows",
+            "Optimisation for lead quality"
+          ]
+        },
+        {
+          "number": "10",
+          "name": "Analytics & Reporting",
+          "headline": "Know What's Working",
+          "deliverables": [
+            "Analytics set-up and goal tracking",
+            "Custom dashboards",
+            "Monthly and quarterly reports",
+            "Channel, content and campaign comparison",
+            "Recommendations for the next period"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "it-solutions",
+      "number": "II",
+      "name": "IT & Business Solutions",
+      "subtitle": "360 degree IT & business solutions",
+      "tagline": "To build, secure, deploy and support the technology you depend on.",
+      "services": [
+        {
+          "number": "11",
+          "name": "IT Consulting",
+          "headline": "Think Before You Spend",
+          "deliverables": [
+            "IT assessment and gap analysis",
+            "Technology roadmaps and budgeting guidance",
+            "Tool and vendor selection support",
+            "Digital transformation planning",
+            "Architecture and project reviews"
+          ]
+        },
+        {
+          "number": "12",
+          "name": "Custom Software Development",
+          "headline": "Software That Fits You, Not the Other Way Round",
+          "deliverables": [
+            "CRM, ERP modules, inventory, billing and workflow tools",
+            "Dashboards, portals and internal tools",
+            "Automation of repetitive manual work",
+            "Testing, documentation and handover"
+          ]
+        },
+        {
+          "number": "13",
+          "name": "Web & Mobile Applications",
+          "headline": "The Digital World is at Your Fingertip",
+          "deliverables": [
+            "Business websites and e-commerce stores",
+            "Web applications and customer portals",
+            "Android and iOS app development (Apple App Store & Google Play)",
+            "UI/UX design and prototypes",
+            "Performance tuning, hosting set-up and ongoing updates"
+          ]
+        },
+        {
+          "number": "14",
+          "name": "Systems Integration",
+          "headline": "Make Your Tools Talk to Each Other",
+          "deliverables": [
+            "Integration of accounting, CRM, e-commerce, HR and operations tools",
+            "API development and third-party connections",
+            "Data synchronisation and migration",
+            "Workflow automation between systems",
+            "Documentation and ongoing support"
+          ]
+        },
+        {
+          "number": "15",
+          "name": "Database Management",
+          "headline": "Your Data: Fast, Safe and Recoverable",
+          "deliverables": [
+            "Database design and schema planning",
+            "Set-up, migration and upgrades",
+            "Performance tuning and query optimisation",
+            "Backup, recovery and retention planning",
+            "Access control and data integrity checks"
+          ]
+        },
+        {
+          "number": "16",
+          "name": "Networking",
+          "headline": "A Network You Never Have to Think About",
+          "deliverables": [
+            "Office network design and cabling guidance",
+            "Wi-Fi planning and set-up",
+            "Routers, switches, firewalls and VPN configuration",
+            "Multi-site and remote-access connectivity",
+            "Troubleshooting, monitoring and support"
+          ]
+        },
+        {
+          "number": "17",
+          "name": "IT Training",
+          "headline": "Skills That Stay With You",
+          "deliverables": [
+            "Corporate training on tools and platforms",
+            "Workshops on cloud, security awareness and productivity",
+            "Skill programmes for students and early-career professionals",
+            "Customised curriculum and hands-on labs",
+            "Assessments and learning materials"
+          ]
+        },
+        {
+          "number": "18",
+          "name": "Managed Services",
+          "headline": "Your Own IT Team, Without Hiring One",
+          "deliverables": [
+            "Helpdesk and user support",
+            "Device, user and software management",
+            "Patching, updates and health monitoring",
+            "Backup and security oversight",
+            "Regular reporting and service reviews"
+          ]
+        },
+        {
+          "number": "19",
+          "name": "DevOps & Cloud Infrastructure",
+          "headline": "Launch Faster. Stay Online. Avoid Unexpected Costs.",
+          "deliverables": [
+            "Cloud architecture and migration planning",
+            "Infrastructure set-up on major cloud platforms",
+            "Automated build, test and release (CI/CD)",
+            "Containers and environment management",
+            "Monitoring, logging, backups and cost optimisation"
+          ]
+        },
+        {
+          "number": "20",
+          "name": "Cybersecurity",
+          "headline": "Protect What Matters Most",
+          "deliverables": [
+            "Security assessments and risk reviews",
+            "Hardening of devices, identities and access",
+            "Secure setup of endpoints, cloud and networks",
+            "Policy guidance and staff awareness sessions",
+            "Incident readiness planning"
+          ]
+        }
+      ]
+    }
+  ],
+  "promises": [
+    { "number": "01", "title": "Clarity", "description": "Plain language, clear scope and no surprises in timelines or costs." },
+    { "number": "02", "title": "Reliability", "description": "We do what we say, when we say it. If something changes, you hear it from us early." },
+    { "number": "03", "title": "Security by Default", "description": "Protection is built in from day one, not added at the end." },
+    { "number": "04", "title": "Business First", "description": "Technology and marketing serve your goals, not the other way round." },
+    { "number": "05", "title": "Craft", "description": "We care about the quality of every line of code, design, sentence of copy and second of sound." },
+    { "number": "06", "title": "Partnership", "description": "Your success is our reference. We act like part of your team." }
+  ],
+  "industries": [
+    "Retail & E-Commerce",
+    "Healthcare & Health-Tech",
+    "Real Estate & Construction",
+    "Financial Services & FinTech",
+    "Education & Ed-Tech",
+    "Hospitality & Tourism",
+    "Manufacturing & Supply Chain",
+    "Professional Services & Consultancies",
+    "Media & Entertainment",
+    "Startups & SMEs",
+    "Founders, Executives & Thought Leaders"
+  ]
+}

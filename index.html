@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nellys Tech Pvt. Ltd. | Digital Business Card</title>
+  <meta name="description" content="Official Digital Card of Nellys Tech Private Limited (Kowdiar, Thiruvananthapuram). Technology that runs your business. Visibility that grows it. 20 Capabilities in Digital Branding & 360° IT Solutions.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Configure Tailwind BEFORE loading tailwind.cdn.js so OS dark mode never causes negative/inverted colors -->
+  <script>
+    window.tailwind = window.tailwind || {};
+    window.tailwind.config = {
+      darkMode: ['selector', '[data-theme="dark"]']
+    };
+  </script>
+  <script src="tailwind.cdn.js"></script>
+  <script>
+    if (window.tailwind) {
+      tailwind.config = {
+        darkMode: ['selector', '[data-theme="dark"]'],
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                dark: '#0B0F19',
+                slate: '#111827',
+                cyan: '#06B6D4',
+                indigo: '#6366F1',
+                blue: '#0284C7'
+              }
+            }
+          }
+        }
+      };
+    }
+  </script>
+
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Nellys Tech Global Theme Stylesheet -->
+  <link rel="stylesheet" href="css/global.css">
+
+  <style>
+    /* ============================================================
+       Digital Card Theme System (Driven strictly by [data-theme])
+       Zero OS media-query conflicts — Crisp in both Light & Dark!
+       ============================================================ */
+    :root,
+    [data-theme="light"] {
+      --dc-page-bg: linear-gradient(135deg, #EEF2FF 0%, #F8FAFF 45%, #E0E7FF 100%);
+      --dc-shell-bg: rgba(248, 250, 255, 0.92);
+      --dc-shell-border: #C7D2FE;
+      --dc-shell-shadow: 0 20px 50px -12px rgba(79, 70, 229, 0.12);
+
+      --dc-card-bg: #FFFFFF;
+      --dc-card-border: #C7D2FE;
+      --dc-card-shadow: 0 4px 20px rgba(79, 70, 229, 0.06);
+
+      --dc-surface-subtle: #EEF2FF;
+      --dc-surface-hover: #E0E7FF;
+
+      --dc-heading: #0F172A;
+      --dc-section-label: #4F46E5;
+      --dc-text-main: #1E293B;
+      --dc-text-muted: #475569;
+
+      --dc-logo-circle-bg: #FFFFFF;
+      --dc-logo-circle-border: #E0E7FF;
+      --dc-logo-text: #0F172A;
+
+      --dc-pill-bg: #EEF2FF;
+      --dc-pill-border: #C7D2FE;
+      --dc-pill-text: #1E293B;
+    }
+
+    [data-theme="dark"] {
+      --dc-page-bg: radial-gradient(circle at top left, #111827 0%, #090D16 55%, #030712 100%);
+      --dc-shell-bg: rgba(15, 23, 42, 0.82);
+      --dc-shell-border: #1E293B;
+      --dc-shell-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
+
+      --dc-card-bg: #111827;
+      --dc-card-border: #1E293B;
+      --dc-card-shadow: 0 4px 30px rgba(0, 0, 0, 0.45);
+
+      --dc-surface-subtle: #1E293B;
+      --dc-surface-hover: #334155;
+
+      --dc-heading: #F8FAFC;
+      --dc-section-label: #38BDF8;
+      --dc-text-main: #E2E8F0;
+      --dc-text-muted: #94A3B8;
+
+      --dc-logo-circle-bg: #0B0F19;
+      --dc-logo-circle-border: #1E293B;
+      --dc-logo-text: #FFFFFF;
+
+      --dc-pill-bg: #1E293B;
+      --dc-pill-border: #334155;
+      --dc-pill-text: #F1F5F9;
+    }
+
+    body {
+      background: var(--dc-page-bg) !important;
+      color: var(--dc-text-main) !important;
+    }
+
+    .dc-shell {
+      background: var(--dc-shell-bg);
+      border: 1px solid var(--dc-shell-border);
+      box-shadow: var(--dc-shell-shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .dc-card {
+      background-color: var(--dc-card-bg) !important;
+      border: 1px solid var(--dc-card-border) !important;
+      box-shadow: var(--dc-card-shadow) !important;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .dc-heading {
+      color: var(--dc-heading) !important;
+    }
+
+    .dc-section-title {
+      color: var(--dc-section-label) !important;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+
+    .dc-text {
+      color: var(--dc-text-main) !important;
+    }
+
+    .dc-muted {
+      color: var(--dc-text-muted) !important;
+    }
+
+    .dc-pill {
+      background-color: var(--dc-pill-bg) !important;
+      border: 1px solid var(--dc-pill-border) !important;
+      color: var(--dc-pill-text) !important;
+    }
+
+    .dc-logo-badge {
+      background-color: var(--dc-logo-circle-bg) !important;
+      border: 4px solid var(--dc-logo-circle-border) !important;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.16);
+    }
+
+    .dc-logo-label {
+      color: var(--dc-logo-text) !important;
+    }
+
+    /* Primary Gradient Action Buttons (Cyan -> Indigo Nellys Tech Signature) */
+    .btn-nellys {
+      background: linear-gradient(135deg, #06B6D4 0%, #0284C7 45%, #4F46E5 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 6px 18px -4px rgba(6, 182, 212, 0.45);
+      transition: all 0.22s ease;
+      border: none;
+    }
+    .btn-nellys span, .btn-nellys i {
+      color: #FFFFFF !important;
+    }
+    .btn-nellys:hover {
+      background: linear-gradient(135deg, #22D3EE 0%, #06B6D4 45%, #6366F1 100%) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px -4px rgba(79, 70, 229, 0.5);
+    }
+
+    /* Contact & Links Icon Tiles — Bright Pastels in Light Mode, Rich Glass in Dark Mode */
+    .icon-tile {
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+    }
+    .icon-tile:hover {
+      transform: translateY(-4px) scale(1.04);
+    }
+    .icon-tile-label {
+      color: var(--dc-heading) !important;
+      font-weight: 600;
+      font-size: 0.75rem;
+      margin-top: 0.5rem;
+      display: block;
+    }
+
+    .tile-sky     { background: #E0F2FE; border: 1px solid #BAE6FD; color: #0284C7; }
+    .tile-emerald { background: #D1FAE5; border: 1px solid #A7F3D0; color: #059669; }
+    .tile-rose    { background: #FFE4E6; border: 1px solid #FECDD3; color: #E11D48; }
+    .tile-indigo  { background: #E0E7FF; border: 1px solid #C7D2FE; color: #4F46E5; }
+    .tile-amber   { background: #FEF3C7; border: 1px solid #FDE68A; color: #D97706; }
+    .tile-teal    { background: #CCFBF1; border: 1px solid #99F6E4; color: #0D9488; }
+    .tile-purple  { background: #F3E8FF; border: 1px solid #E9D5FF; color: #7E22CE; }
+    .tile-blue    { background: #DBEAFE; border: 1px solid #BFDBFE; color: #1D4ED8; }
+    .tile-pink    { background: #FCE7F3; border: 1px solid #FBCFE8; color: #DB2777; }
+    .tile-slate   { background: #E2E8F0; border: 1px solid #CBD5E1; color: #0F172A; }
+
+    [data-theme="dark"] .tile-sky     { background: rgba(2, 132, 199, 0.18);  border-color: rgba(56, 189, 248, 0.35);  color: #38BDF8; }
+    [data-theme="dark"] .tile-emerald { background: rgba(5, 150, 105, 0.18);  border-color: rgba(52, 211, 153, 0.35);  color: #34D399; }
+    [data-theme="dark"] .tile-rose    { background: rgba(225, 29, 72, 0.18);  border-color: rgba(251, 113, 133, 0.35); color: #FB7185; }
+    [data-theme="dark"] .tile-indigo  { background: rgba(79, 70, 229, 0.20);  border-color: rgba(129, 140, 248, 0.38); color: #818CF8; }
+    [data-theme="dark"] .tile-amber   { background: rgba(217, 119, 6, 0.18);  border-color: rgba(251, 191, 36, 0.35);  color: #FBBF24; }
+    [data-theme="dark"] .tile-teal    { background: rgba(13, 148, 136, 0.18); border-color: rgba(45, 212, 191, 0.35);  color: #2DD4BF; }
+    [data-theme="dark"] .tile-purple  { background: rgba(126, 34, 206, 0.18); border-color: rgba(192, 132, 252, 0.35); color: #C084FC; }
+    [data-theme="dark"] .tile-blue    { background: rgba(29, 78, 216, 0.20);  border-color: rgba(96, 165, 250, 0.38);  color: #60A5FA; }
+    [data-theme="dark"] .tile-pink    { background: rgba(219, 39, 119, 0.18); border-color: rgba(244, 114, 182, 0.35); color: #F472B6; }
+    [data-theme="dark"] .tile-slate   { background: rgba(51, 65, 85, 0.45);   border-color: rgba(148, 163, 184, 0.35); color: #F8FAFC; }
+
+    .icon-box i {
+      color: inherit !important;
+    }
+
+    /* Status Badges */
+    .badge-open {
+      background-color: #D1FAE5 !important;
+      color: #047857 !important;
+      border: 1px solid #6EE7B7 !important;
+    }
+    [data-theme="dark"] .badge-open {
+      background-color: rgba(6, 78, 59, 0.65) !important;
+      color: #34D399 !important;
+      border-color: rgba(52, 211, 153, 0.4) !important;
+    }
+
+    .badge-closed {
+      background-color: #FFE4E6 !important;
+      color: #BE123C !important;
+      border: 1px solid #FDA4AF !important;
+    }
+    [data-theme="dark"] .badge-closed {
+      background-color: rgba(136, 19, 55, 0.65) !important;
+      color: #FB7185 !important;
+      border-color: rgba(251, 113, 133, 0.4) !important;
+    }
+
+    /* Modal Backdrop & Panel */
+    .dc-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      background-color: rgba(11, 15, 25, 0.72);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem;
+    }
+    .dc-modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .dc-modal-panel {
+      background-color: var(--dc-card-bg);
+      border: 1px solid var(--dc-card-border);
+      color: var(--dc-text-main);
+      transform: translateY(16px) scale(0.97);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.45);
+    }
+    .dc-modal-backdrop.active .dc-modal-panel {
+      transform: translateY(0) scale(1);
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .no-scrollbar::-webkit-scrollbar-thumb {
+      background: var(--dc-card-border);
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="antialiased pb-10">
+
+  <!-- TOP ANNOUNCEMENT / UTILITY BAR -->
+  <div class="top-announcement-bar border-b text-xs py-2 px-3 sm:px-6">
+    <div class="max-w-[1380px] mx-auto flex items-center justify-between gap-3 flex-wrap">
+      <div class="flex items-center gap-2">
+        <span class="top-announcement-badge font-bold px-2.5 py-0.5 rounded-full text-[10px] uppercase tracking-wider shrink-0">
+          Digital Card 2026
+        </span>
+        <span class="font-semibold hidden sm:inline">
+          Technology that runs your business. Visibility that grows it.
+        </span>
+        <span class="font-semibold sm:hidden">
+          Nellys Tech Pvt. Ltd.
+        </span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button onclick="openDcModal('services-modal')" class="px-3 py-1 rounded-lg bg-cyan-500/15 border border-cyan-500/40 font-bold text-xs hover:bg-cyan-500/25 transition flex items-center gap-1.5" style="color: var(--accent);">
+          <i class="fas fa-layer-group"></i>
+          <span>20 Services</span>
+        </button>
+        <button onclick="openDcModal('qr-modal')" class="px-3 py-1 rounded-lg dc-pill font-bold text-xs hover:opacity-90 transition flex items-center gap-1.5" title="Show QR Code">
+          <i class="fas fa-qrcode" style="color: var(--accent);"></i>
+          <span class="hidden sm:inline">QR Code</span>
+        </button>
+        <!-- Official Theme Toggle Button from global.js -->
+        <button class="theme-toggle-btn w-9 h-9 rounded-xl bg-white border border-slate-300 flex items-center justify-center transition-all shadow-sm" title="Toggle Light / Dark Theme">
+          <i class="fas fa-moon text-indigo-600 text-sm"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN DIGITAL CARD CONTAINER -->
+  <main class="max-w-[1380px] mx-auto px-2.5 sm:px-6 pt-4 pb-6">
+    <div class="dc-shell rounded-[28px] p-3 sm:p-5 lg:p-6">
+
+      <!-- 3-COLUMN RESPONSIVE GRID (Laptop: 3 Cols | Mobile: Single-Column Flow) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-start">
+
+        <!-- ============================================================== -->
+        <!-- COLUMN 1 (LEFT): COMPANY PROFILE CARD (lg:col-span-3)          -->
+        <!-- ============================================================== -->
+        <div class="lg:col-span-3 dc-card rounded-3xl overflow-hidden flex flex-col">
+
+          <!-- TOP COVER BANNER (Responsive HTML + Photo so text is never cropped!) -->
+          <div class="relative h-44 sm:h-48 w-full overflow-hidden select-none" style="background: #0B0F19;">
+            <img src="assets/slide1.jpg" alt="Nellys Tech Cover" class="w-full h-full object-cover opacity-55">
+            <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(11,15,25,0.92) 0%, rgba(11,15,25,0.72) 55%, rgba(6,182,212,0.28) 100%);"></div>
+
+            <!-- Banner Content -->
+            <div class="absolute inset-0 p-4 flex flex-col justify-between">
+              <div class="flex items-center justify-between gap-2">
+                <span class="px-2.5 py-0.5 rounded-full text-[9px] font-extrabold uppercase tracking-wider" style="background: rgba(6,182,212,0.22); color: #38BDF8; border: 1px solid rgba(56,189,248,0.4);">
+                  BUILD &bull; CONNECT &bull; GROW
+                </span>
+                <span class="px-2.5 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider" style="background: rgba(15,23,42,0.85); color: #E2E8F0; border: 1px solid rgba(148,163,184,0.3);">
+                  <i class="fas fa-location-dot" style="color: #38BDF8;"></i> Kowdiar, TVM
+                </span>
+              </div>
+
+              <div class="pb-7">
+                <p class="text-[10px] font-extrabold uppercase tracking-widest" style="color: #38BDF8;">
+                  One Partner &bull; Every Possibility
+                </p>
+                <h2 class="text-base sm:text-lg font-extrabold leading-tight mt-0.5" style="color: #FFFFFF !important;">
+                  360° Enterprise IT &amp;<br>
+                  <span style="color: #38BDF8;">Digital Branding</span>
+                </h2>
+              </div>
+            </div>
+
+            <!-- Bottom Accent Wave Strip -->
+            <div class="absolute bottom-0 inset-x-0 h-2" style="background: linear-gradient(90deg, #06B6D4, #6366F1, #38BDF8);"></div>
+          </div>
+
+          <!-- OVERLAPPING CIRCULAR LOGO BADGE -->
+          <div class="relative -mt-12 flex justify-center z-10">
+            <div class="w-24 h-24 rounded-full dc-logo-badge p-2 flex flex-col items-center justify-center">
+              <img src="nellys-logo-light.svg" alt="Nellys Tech Logo" class="w-14 h-auto">
+              <span class="dc-logo-label text-[8px] font-extrabold tracking-wider uppercase mt-1">NELLYS TECH</span>
+            </div>
+          </div>
+
+          <!-- PROFILE BODY -->
+          <div class="px-5 pt-3 pb-6 text-center flex-grow flex flex-col justify-between">
+            <div>
+              <!-- Company Name + Verified Tick -->
+              <div class="flex items-center justify-center gap-1.5 mt-1">
+                <h1 class="dc-heading text-xl sm:text-[21px] font-extrabold tracking-tight">
+                  Nellys Tech Pvt. Ltd.
+                </h1>
+                <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-sky-500 text-white text-[10px] shrink-0 shadow-sm" title="Verified Corporate Entity">
+                  <i class="fas fa-check" style="color: #FFFFFF !important;"></i>
+                </span>
+              </div>
+
+              <!-- Subtitle -->
+              <p class="dc-muted text-xs font-semibold mt-1">
+                Enterprise IT &amp; Digital Branding &bull; Thiruvananthapuram
+              </p>
+
+              <!-- Capability Badge -->
+              <div class="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl dc-pill text-[10px] font-extrabold tracking-wide">
+                <i class="fas fa-shield-halved" style="color: var(--accent);"></i>
+                <span>20 UNIFIED CAPABILITIES &bull; KOWDIAR HQ</span>
+              </div>
+
+              <!-- ABOUT BUSINESS SECTION -->
+              <div class="mt-5 text-left border-t pt-4" style="border-color: var(--dc-card-border);">
+                <h2 class="dc-section-title mb-2">
+                  ABOUT BUSINESS
+                </h2>
+                <p class="dc-text text-xs sm:text-[13px] leading-relaxed">
+                  <strong class="dc-heading">"Technology that runs your business. Visibility that grows it."</strong> We unify <span class="font-bold" style="color: var(--accent);">Digital Branding (10 Services)</span> and <span class="font-bold" style="color: var(--accent-indigo);">360° IT &amp; Business Solutions (10 Services)</span> under one expert team in Kowdiar, Thiruvananthapuram.
+                </p>
+
+                <!-- Expandable Read More Content -->
+                <div id="about-more-content" class="hidden mt-3 pt-3 border-t border-dashed space-y-2.5 text-xs dc-text" style="border-color: var(--dc-card-border);">
+                  <div>
+                    <strong class="dc-section-title block text-[10px]">Our Vision</strong>
+                    <p class="mt-0.5 italic dc-text">"To be the trusted single partner that modern enterprises turn to when they refuse to let fragmented agencies compromise their growth, security, and digital presence."</p>
+                  </div>
+                  <div>
+                    <strong class="dc-section-title block text-[10px]">4 Synergy Pillars</strong>
+                    <ul class="mt-1 space-y-1 text-[11px] dc-text">
+                      <li>&bull; <strong class="dc-heading">Build + Protect:</strong> Custom Software &amp; Zero Trust Security</li>
+                      <li>&bull; <strong class="dc-heading">Attract + Follow Up:</strong> SEO, Paid Social &amp; CRM Funnels</li>
+                      <li>&bull; <strong class="dc-heading">Define + Express:</strong> Brand Identity, UI/UX &amp; Mobile Apps</li>
+                      <li>&bull; <strong class="dc-heading">Record + Amplify:</strong> 4K Video &amp; Studio Podcasting</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <strong class="dc-section-title block text-[10px]">6 Promises We Live By</strong>
+                    <p class="mt-0.5 text-[11px] dc-text">1. Clarity &bull; 2. Reliability &bull; 3. Security by Default &bull; 4. Business First &bull; 5. Craft &bull; 6. Partnership</p>
+                  </div>
+                  <button onclick="openDcModal('about-modal')" class="text-[11px] font-bold underline block pt-1" style="color: var(--accent);">
+                    Open Full Corporate Charter &rarr;
+                  </button>
+                </div>
+
+                <button id="read-more-btn" onclick="toggleReadMore()" class="mt-2.5 inline-flex items-center gap-1 text-xs font-extrabold transition" style="color: var(--accent);">
+                  <span id="read-more-label" style="color: inherit;">Read More</span>
+                  <i id="read-more-icon" class="fas fa-chevron-down text-[10px]" style="color: inherit;"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- DESKTOP PRIMARY CTA BUTTON ("Our Services") -->
+            <div class="hidden lg:block mt-5 pt-2">
+              <button onclick="openDcModal('services-modal')" class="btn-nellys w-full py-3.5 px-5 rounded-2xl font-bold text-sm flex items-center justify-center gap-2">
+                <i class="fas fa-briefcase"></i>
+                <span>Our Services (20)</span>
+              </button>
+            </div>
+
+            <!-- MOBILE-ONLY 2x2 QUICK ACTION BUTTONS (Matches Mobile Reference Layout!) -->
+            <div class="grid grid-cols-2 gap-2.5 mt-5 lg:hidden">
+              <button onclick="openDcModal('services-modal')" class="btn-nellys py-3 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-2">
+                <i class="fas fa-briefcase"></i>
+                <span>Our Services</span>
+              </button>
+              <button onclick="downloadVCard()" class="btn-nellys py-3 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-2">
+                <i class="fas fa-user-plus"></i>
+                <span>Save Contact</span>
+              </button>
+              <button onclick="openDcModal('pay-modal')" class="btn-nellys py-3 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-2">
+                <i class="fas fa-indian-rupee-sign"></i>
+                <span>Pay / Quote</span>
+              </button>
+              <button onclick="openDcModal('location-modal')" class="btn-nellys py-3 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-2">
+                <i class="fas fa-location-dot"></i>
+                <span>My Location</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- COLUMN 2 (CENTER): GALLERY + CONTACT & LINKS (lg:col-span-6)   -->
+        <!-- ============================================================== -->
+        <div class="lg:col-span-6 flex flex-col gap-5 lg:gap-6">
+
+          <!-- DESKTOP TOP GALLERY STRIP -->
+          <div class="hidden lg:block dc-card rounded-3xl p-5">
+            <div class="flex items-center justify-between mb-3.5">
+              <h2 class="dc-section-title flex items-center gap-2">
+                <i class="fas fa-images"></i> GALLERY
+              </h2>
+              <div class="flex items-center gap-2">
+                <button onclick="scrollGallery(-260)" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center text-xs hover:opacity-80 transition" title="Scroll Left">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="scrollGallery(260)" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center text-xs hover:opacity-80 transition" title="Scroll Right">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Horizontal Scrollable Poster Cards -->
+            <div id="desktop-gallery-track" class="flex items-center gap-3.5 overflow-x-auto no-scrollbar pb-1.5 scroll-smooth">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- CONTACT & LINKS ICON GRID CARD -->
+          <div class="dc-card rounded-3xl p-5 sm:p-6">
+            <div class="flex items-center justify-between mb-5">
+              <h2 class="dc-section-title">
+                CONTACT &amp; LINKS
+              </h2>
+              <span class="dc-muted text-[11px] font-semibold">Tap any icon to connect</span>
+            </div>
+
+            <!-- 4 Cols on Mobile, 5 Cols on Desktop -->
+            <div class="grid grid-cols-4 sm:grid-cols-5 gap-y-6 gap-x-3 text-center">
+
+              <!-- 1. Phone -->
+              <a href="tel:04712720004" class="icon-tile flex flex-col items-center">
+                <div class="icon-box tile-sky w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
+                  <i class="fas fa-phone-volume"></i>
+                </div>
+                <span class="icon-tile-label">Phone</span>
+              </a>
+
+              <!-- 2. WhatsApp -->
+              <a href="https://wa.me/914712720004?text=Hello%20Nellys%20Tech%20Pvt.%20Ltd.%2C%20I%20viewed%20your%20Digital%20Card%20and%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" class="icon-tile flex flex-col items-center">
+                <div class="icon-box tile-emerald w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-sm">
+                  <i class="fab fa-whatsapp"></i>
+                </div>
+                <span class="icon-tile-label">WhatsApp</span>
+              </a>
+
+              <!-- 3. Email -->
+              <a href="mailto:nellystechai@gmail.com?subject=Business%20Inquiry%20-%20Nellys%20Tech%20Pvt.%20Ltd." class="icon-tile flex flex-col items-center">
+                <div class="icon-box tile-rose w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
+                  <i class="far fa-envelope"></i>
+                </div>
+                <span class="icon-tile-label">Email</span>
+              </a>
+
+              <!-- 4. Website -->
+              <a href="https://nellystech.in" target="_blank" rel="noopener" class="icon-tile flex flex-col items-center">
+                <div class="icon-box tile-indigo w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
+                  <i class="fas fa-globe"></i>
+                </div>
+                <span class="icon-tile-label">Website</span>
+              </a>
+
+              <!-- 5. Bank / Corporate Info -->
+              <button onclick="openDcModal('bank-modal')" class="icon-tile flex flex-col items-center">
+                <div class="icon-box tile-amber w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
+                  <i class="fas fa-building-columns"></i>
+                </div>
+                <span class="icon-tile-label">Bank / Info</span>
+              </button>
+
+              <!-- 6. Address -->
+              <button onclick="openDcModal('location-modal')" class="icon-tile flex flex-col items-center">
+                <div class="icon-box tile-rose w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
+                  <i class="fas fa-location-dot"></i>
+                </div>
+                <span class="icon-tile-label">Address</span>
+              </button>
+
+              <!-- 7. Brochure (PDF Profile) -->
+              <a href="assets/Nellys-Tech-Company-Profile-2026.pdf" target="_blank" download="Nellys-Tech-Company-Profile-2026.pdf" class="icon-tile flex flex-col items-center">
+                <div class="icon-box tile-indigo w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
+                  <i class="far fa-file-pdf"></i>
+                </div>
+                <span class="icon-tile-label">Brochure</span>
+              </a>
+
+              <!-- 8. BOOK NOW -->
+              <button onclick="openDcModal('appointment-modal')" class="icon-tile flex flex-col items-center">
+                <div class="icon-box tile-teal w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
+                  <i class="far fa-calendar-check"></i>
+                </div>
+                <span class="icon-tile-label font-extrabold">BOOK NOW</span>
+              </button>
+
+              <!-- 9. Auto Reply (Quick WhatsApp Inquiry) -->
+              <button onclick="openDcModal('autoreply-modal')" class="icon-tile flex flex-col items-center">
+                <div class="icon-box tile-emerald w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
+                  <i class="fas fa-reply-all"></i>
+                </div>
+                <span class="icon-tile-label">Auto Reply</span>
+              </button>
+
+              <!-- 10. Copy Link -->
+              <button onclick="copyCardLink()" class="icon-tile flex flex-col items-center">
+                <div class="icon-box tile-purple w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
+                  <i class="far fa-copy"></i>
+                </div>
+                <span class="icon-tile-label">Copy Link</span>
+              </a>
+
+              <!-- 11. Facebook -->
+              <a href="https://facebook.com" target="_blank" rel="noopener" class="icon-tile flex flex-col items-center">
+                <div class="icon-box tile-blue w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
+                  <i class="fab fa-facebook-f"></i>
+                </div>
+                <span class="icon-tile-label">Facebook</span>
+              </a>
+
+              <!-- 12. Instagram -->
+              <a href="https://instagram.com" target="_blank" rel="noopener" class="icon-tile flex flex-col items-center">
+                <div class="icon-box tile-pink w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
+                  <i class="fab fa-instagram"></i>
+                </div>
+                <span class="icon-tile-label">Instagram</span>
+              </a>
+
+              <!-- 13. YouTube -->
+              <a href="https://youtube.com" target="_blank" rel="noopener" class="icon-tile flex flex-col items-center">
+                <div class="icon-box tile-rose w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
+                  <i class="fab fa-youtube"></i>
+                </div>
+                <span class="icon-tile-label">YouTube</span>
+              </a>
+
+              <!-- 14. LinkedIn -->
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="icon-tile flex flex-col items-center">
+                <div class="icon-box tile-sky w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
+                  <i class="fab fa-linkedin-in"></i>
+                </div>
+                <span class="icon-tile-label">LinkedIn</span>
+              </a>
+
+              <!-- 15. X (Twitter) -->
+              <a href="https://x.com" target="_blank" rel="noopener" class="icon-tile flex flex-col items-center">
+                <div class="icon-box tile-slate w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
+                  <i class="fab fa-x-twitter"></i>
+                </div>
+                <span class="icon-tile-label">X</span>
+              </a>
+
+              <!-- 16. QR Code -->
+              <button onclick="openDcModal('qr-modal')" class="icon-tile flex flex-col items-center">
+                <div class="icon-box tile-sky w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
+                  <i class="fas fa-qrcode"></i>
+                </div>
+                <span class="icon-tile-label">QR Code</span>
+              </button>
+
+              <!-- 17. Install / Save App -->
+              <button onclick="openDcModal('install-modal')" class="icon-tile flex flex-col items-center">
+                <div class="icon-box tile-indigo w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
+                  <i class="fas fa-mobile-screen-button"></i>
+                </div>
+                <span class="icon-tile-label">Install</span>
+              </button>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- COLUMN 3 (RIGHT): REVIEW, HOURS, QUICK ACTIONS & SHARE         -->
+        <!-- ============================================================== -->
+        <div class="lg:col-span-3 flex flex-col gap-4">
+
+          <!-- REVIEW US CARD -->
+          <div onclick="openDcModal('review-modal')" class="dc-card rounded-2xl px-5 py-4 flex items-center justify-between cursor-pointer hover:opacity-95 transition">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-full tile-amber flex items-center justify-center text-sm">
+                <i class="fas fa-star"></i>
+              </div>
+              <span class="dc-section-title">
+                REVIEW US
+              </span>
+            </div>
+            <div class="flex items-center gap-1 text-base" style="color: #F59E0B;">
+              <i class="fas fa-star" style="color: #F59E0B !important;"></i>
+              <i class="fas fa-star" style="color: #F59E0B !important;"></i>
+              <i class="fas fa-star" style="color: #F59E0B !important;"></i>
+              <i class="fas fa-star" style="color: #F59E0B !important;"></i>
+              <i class="fas fa-star" style="color: #F59E0B !important;"></i>
+            </div>
+          </div>
+
+          <!-- BUSINESS HOURS CARD -->
+          <div class="dc-card rounded-2xl px-5 py-4">
+            <button onclick="toggleHours()" class="w-full flex items-center justify-between text-left gap-2">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-full tile-sky flex items-center justify-center text-sm shrink-0">
+                  <i class="far fa-clock"></i>
+                </div>
+                <span class="dc-heading text-xs sm:text-[13px] font-extrabold whitespace-nowrap">
+                  09:00 AM – 06:00 PM
+                </span>
+              </div>
+              <div class="flex items-center gap-1.5 shrink-0">
+                <span id="open-status-badge" class="badge-open px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider flex items-center gap-1">
+                  <span id="open-status-dot" class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span id="open-status-text" style="color: inherit;">OPEN</span>
+                </span>
+                <i id="hours-chevron" class="fas fa-chevron-down text-xs dc-muted transition-transform"></i>
+              </div>
+            </button>
+
+            <!-- Expandable Weekly Schedule -->
+            <div id="hours-dropdown" class="hidden mt-3 pt-3 border-t text-xs space-y-1.5 dc-text" style="border-color: var(--dc-card-border);">
+              <div class="flex justify-between"><span>Monday</span><span class="font-bold dc-heading">09:00 AM – 06:00 PM</span></div>
+              <div class="flex justify-between"><span>Tuesday</span><span class="font-bold dc-heading">09:00 AM – 06:00 PM</span></div>
+              <div class="flex justify-between"><span>Wednesday</span><span class="font-bold dc-heading">09:00 AM – 06:00 PM</span></div>
+              <div class="flex justify-between"><span>Thursday</span><span class="font-bold dc-heading">09:00 AM – 06:00 PM</span></div>
+              <div class="flex justify-between"><span>Friday</span><span class="font-bold dc-heading">09:00 AM – 06:00 PM</span></div>
+              <div class="flex justify-between"><span>Saturday</span><span class="font-bold dc-heading">09:30 AM – 05:00 PM</span></div>
+              <div class="flex justify-between"><span style="color: #E11D48; font-weight: 700;">Sunday</span><span style="color: #E11D48; font-weight: 700;">Closed (24/7 Cloud SLA)</span></div>
+            </div>
+          </div>
+
+          <!-- QUICK ACTIONS CARD (Desktop Right Column) -->
+          <div class="hidden lg:block dc-card rounded-3xl p-5 space-y-3">
+            <h2 class="dc-section-title mb-1">
+              QUICK ACTIONS
+            </h2>
+
+            <button onclick="downloadVCard()" class="btn-nellys w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2.5">
+              <i class="fas fa-user-plus"></i>
+              <span>Save Contact</span>
+            </button>
+
+            <button onclick="openDcModal('location-modal')" class="btn-nellys w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2.5">
+              <i class="fas fa-location-dot"></i>
+              <span>Location</span>
+            </button>
+
+            <button onclick="openDcModal('services-modal')" class="btn-nellys w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-between">
+              <span class="w-4"></span>
+              <span class="flex items-center gap-2.5">
+                <i class="fas fa-briefcase"></i>
+                <span>Our Services</span>
+              </span>
+              <i class="fas fa-chevron-right text-xs"></i>
+            </button>
+
+            <button onclick="openDcModal('appointment-modal')" class="btn-nellys w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2.5">
+              <i class="far fa-calendar-check"></i>
+              <span>Book Appointment</span>
+            </button>
+
+            <button onclick="openDcModal('pay-modal')" class="btn-nellys w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2.5">
+              <i class="fas fa-indian-rupee-sign"></i>
+              <span>Pay Now / Quote</span>
+            </button>
+          </div>
+
+          <!-- MOBILE-ONLY IMAGE GALLERY & VIDEO SHOWCASE -->
+          <div class="lg:hidden space-y-5 mt-1">
+            <div class="dc-card rounded-3xl p-4 sm:p-5">
+              <div class="flex items-center justify-between mb-3.5">
+                <h2 class="dc-heading text-sm font-extrabold">
+                  Image Gallery
+                </h2>
+                <span class="text-[11px] font-bold" style="color: var(--accent);">Tap to zoom</span>
+              </div>
+
+              <div id="mobile-gallery-grid" class="grid grid-cols-2 gap-3">
+                <!-- Populated by JS -->
+              </div>
+
+              <div class="mt-4 text-center">
+                <button id="load-more-gallery-btn" onclick="toggleMobileGalleryAll()" class="px-5 py-2 rounded-full dc-pill text-xs font-extrabold transition">
+                  + Load More Images
+                </button>
+              </div>
+            </div>
+
+            <!-- Mobile Video / Studio Capability Highlights -->
+            <div class="dc-card rounded-3xl p-4 sm:p-5">
+              <div class="flex items-center justify-between mb-3.5">
+                <h2 class="dc-heading text-sm font-extrabold">
+                  Video &amp; Studio Highlights
+                </h2>
+                <button onclick="openDcModal('services-modal')" class="text-[11px] font-extrabold" style="color: var(--accent);">
+                  Explore All 20 &rarr;
+                </button>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div onclick="openServiceDetail(6)" class="relative rounded-2xl overflow-hidden aspect-[4/5] group cursor-pointer border" style="border-color: var(--dc-card-border);">
+                  <img src="assets/services/service-06.jpg" alt="Podcasting & Audio Production" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent flex flex-col justify-end p-3">
+                    <div class="w-9 h-9 rounded-full bg-cyan-500 text-white flex items-center justify-center mb-auto self-end shadow-md">
+                      <i class="fas fa-play text-xs ml-0.5" style="color: #FFFFFF !important;"></i>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase" style="color: #38BDF8 !important;">Studio 06</span>
+                    <h4 class="text-xs font-bold leading-snug" style="color: #FFFFFF !important;">Podcasting &amp; Audio Production</h4>
+                  </div>
+                </div>
+                <div onclick="openServiceDetail(7)" class="relative rounded-2xl overflow-hidden aspect-[4/5] group cursor-pointer border" style="border-color: var(--dc-card-border);">
+                  <img src="assets/services/service-07.jpg" alt="4K Video Marketing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent flex flex-col justify-end p-3">
+                    <div class="w-9 h-9 rounded-full bg-indigo-500 text-white flex items-center justify-center mb-auto self-end shadow-md">
+                      <i class="fas fa-play text-xs ml-0.5" style="color: #FFFFFF !important;"></i>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase" style="color: #818CF8 !important;">Studio 07</span>
+                    <h4 class="text-xs font-bold leading-snug" style="color: #FFFFFF !important;">4K Video Marketing &amp; Brand Films</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SOCIAL SHARE CARD -->
+          <div class="dc-card rounded-3xl p-5">
+            <h2 class="dc-section-title mb-3.5">
+              SOCIAL SHARE
+            </h2>
+            <div class="flex items-center justify-between gap-2">
+              <button onclick="shareCard('whatsapp')" class="icon-box tile-emerald w-11 h-11 rounded-full flex items-center justify-center text-lg transition hover:scale-110 shadow-sm" title="Share on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </button>
+              <button onclick="shareCard('instagram')" class="icon-box tile-pink w-11 h-11 rounded-full flex items-center justify-center text-lg transition hover:scale-110 shadow-sm" title="Share on Instagram">
+                <i class="fab fa-instagram"></i>
+              </button>
+              <button onclick="shareCard('facebook')" class="icon-box tile-blue w-11 h-11 rounded-full flex items-center justify-center text-lg transition hover:scale-110 shadow-sm" title="Share on Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </button>
+              <button onclick="shareCard('linkedin')" class="icon-box tile-sky w-11 h-11 rounded-full flex items-center justify-center text-lg transition hover:scale-110 shadow-sm" title="Share on LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </button>
+              <button onclick="shareCard('twitter')" class="icon-box tile-slate w-11 h-11 rounded-full flex items-center justify-center text-lg transition hover:scale-110 shadow-sm" title="Share on X">
+                <i class="fab fa-x-twitter"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FOOTER BAR -->
+    <div class="mt-5 px-5 py-3.5 rounded-2xl dc-card flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+      <p class="dc-muted">&copy; 2026 <strong class="dc-heading">Nellys Tech Private Limited</strong>. Kowdiar, Thiruvananthapuram.</p>
+      <div class="flex flex-wrap items-center gap-4 font-bold dc-text">
+        <button onclick="openDcModal('services-modal')" class="hover:underline" style="color: var(--accent);">Our 20 Services</button>
+        <span class="dc-muted">|</span>
+        <button onclick="openDcModal('about-modal')" class="hover:underline">6 Promises &amp; Charter</button>
+        <span class="dc-muted">|</span>
+        <button onclick="openDcModal('pay-modal')" class="hover:underline">Create Quotation</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================================================================ -->
+  <!-- POPUP MODAL 1: OUR 20 CONNECTED SERVICES (USES GLOBAL.CSS PHOTO CARDS!)      -->
+  <!-- ============================================================================ -->
+  <div id="services-modal" class="dc-modal-backdrop">
+    <div class="dc-modal-panel rounded-3xl max-w-6xl w-full max-h-[92vh] flex flex-col overflow-hidden">
+
+      <!-- Modal Header -->
+      <div class="px-5 sm:px-7 py-4 sm:py-5 flex items-center justify-between gap-4 shrink-0" style="background: linear-gradient(90deg, #0B0F19 0%, #111827 50%, #1E1B4B 100%); border-bottom: 1px solid rgba(56,189,248,0.25);">
+        <div class="flex items-center gap-3.5">
+          <div class="w-11 h-11 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center p-1.5 shrink-0">
+            <img src="nellys-logo-dark.svg" alt="Nellys Tech" class="w-full h-auto">
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-widest block" style="color: #38BDF8 !important;">Two Strengths &bull; One Direction</span>
+            <h3 class="text-lg sm:text-2xl font-extrabold leading-tight" style="color: #FFFFFF !important;">Our 20 Connected Services</h3>
+          </div>
+        </div>
+        <button onclick="closeDcModal('services-modal')" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-lg transition shrink-0" style="color: #FFFFFF !important;">
+          <i class="fas fa-xmark" style="color: #FFFFFF !important;"></i>
+        </button>
+      </div>
+
+      <!-- Filter Tabs & Search Bar -->
+      <div class="px-5 sm:px-7 py-3.5 border-b flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 shrink-0" style="background: var(--dc-surface-subtle); border-color: var(--dc-card-border);">
+        <div class="flex flex-wrap items-center gap-2">
+          <button onclick="filterServices('all')" id="srv-tab-all" class="srv-tab btn-nellys px-4 py-2 rounded-xl text-xs font-bold">
+            <span>All 20 Services</span>
+          </button>
+          <button onclick="filterServices('branding')" id="srv-tab-branding" class="srv-tab dc-card px-4 py-2 rounded-xl text-xs font-bold dc-heading">
+            <i class="fas fa-bullhorn mr-1" style="color: #06B6D4;"></i> Digital Branding (10)
+          </button>
+          <button onclick="filterServices('it')" id="srv-tab-it" class="srv-tab dc-card px-4 py-2 rounded-xl text-xs font-bold dc-heading">
+            <i class="fas fa-laptop-code mr-1" style="color: #6366F1;"></i> 360° IT Solutions (10)
+          </button>
+        </div>
+
+        <div class="relative sm:w-64">
+          <i class="fas fa-search absolute left-3.5 top-1/2 -translate-y-1/2 dc-muted text-xs"></i>
+          <input id="service-search-input" oninput="searchServices(this.value)" type="text" placeholder="Search 20 services..." class="w-full pl-9 pr-4 py-2 rounded-xl border text-xs focus:outline-none">
+        </div>
+      </div>
+
+      <!-- Services Cards Grid (Using .service-card from global.css with real background photos!) -->
+      <div id="services-modal-grid" class="p-5 sm:p-7 overflow-y-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Populated dynamically with all 20 services -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-5 sm:px-7 py-3.5 border-t flex flex-col sm:flex-row items-center justify-between gap-3 text-xs shrink-0" style="background: var(--dc-surface-subtle); border-color: var(--dc-card-border);">
+        <p class="dc-text font-semibold">
+          <i class="fas fa-circle-check text-emerald-500 mr-1"></i> One unified team in Kowdiar, Thiruvananthapuram &bull; Zero vendor finger-pointing
+        </p>
+        <div class="flex items-center gap-2.5 w-full sm:w-auto">
+          <a href="tel:04712720004" class="flex-1 sm:flex-initial text-center px-4 py-2.5 rounded-xl dc-card font-bold dc-heading">
+            <i class="fas fa-phone mr-1 text-emerald-500"></i> 0471 2720004
+          </a>
+          <button onclick="closeDcModal('services-modal'); openDcModal('appointment-modal');" class="flex-1 sm:flex-initial btn-nellys px-5 py-2.5 rounded-xl font-bold">
+            <span>Book Strategy Call &rarr;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================================ -->
+  <!-- POPUP MODAL 2: SINGLE SERVICE DETAIL & INSTANT ENQUIRY                       -->
+  <!-- ============================================================================ -->
+  <div id="service-detail-modal" class="dc-modal-backdrop" style="z-index: 70;">
+    <div class="dc-modal-panel rounded-3xl max-w-xl w-full overflow-hidden">
+      <div class="relative h-52 bg-slate-900">
+        <img id="detail-service-img" src="assets/services/service-01.jpg" alt="Service" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/45 to-transparent"></div>
+        <button onclick="closeDcModal('service-detail-modal')" class="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-slate-900/80 hover:bg-slate-900 flex items-center justify-center" style="color: #FFFFFF !important;">
+          <i class="fas fa-xmark" style="color: #FFFFFF !important;"></i>
+        </button>
+        <div class="absolute bottom-4 left-5 right-5">
+          <span id="detail-service-badge" class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-cyan-500" style="color: #FFFFFF !important;">01 / Digital Branding</span>
+          <h3 id="detail-service-title" class="text-xl sm:text-2xl font-extrabold mt-1" style="color: #FFFFFF !important;">Brand Identity &amp; Logo Design</h3>
+          <p id="detail-service-headline" class="text-xs font-semibold" style="color: #38BDF8 !important;">Look Like Who You Really Are</p>
+        </div>
+      </div>
+      <div class="p-5 sm:p-6 space-y-4 max-h-[65vh] overflow-y-auto">
+        <p id="detail-service-desc" class="text-xs sm:text-sm dc-text leading-relaxed"></p>
+        <div class="p-4 rounded-2xl dc-pill">
+          <span class="dc-section-title block mb-2">What We Deliver</span>
+          <ul id="detail-service-list" class="space-y-1.5 text-xs dc-text font-semibold"></ul>
+        </div>
+        <p id="detail-service-quote" class="text-xs italic dc-muted border-l-2 border-cyan-500 pl-3"></p>
+        <div class="pt-2 flex flex-col sm:flex-row gap-2.5">
+          <a id="detail-whatsapp-link" href="#" target="_blank" rel="noopener" class="flex-1 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 font-bold text-xs text-center flex items-center justify-center gap-2 transition" style="color: #FFFFFF !important;">
+            <i class="fab fa-whatsapp text-base" style="color: #FFFFFF !important;"></i>
+            <span style="color: #FFFFFF !important;">Enquire on WhatsApp</span>
+          </a>
+          <button onclick="closeDcModal('service-detail-modal'); openDcModal('appointment-modal');" class="flex-1 btn-nellys py-3 px-4 rounded-xl font-bold text-xs">
+            <span>Request Proposal &rarr;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================================ -->
+  <!-- POPUP MODAL 3: GALLERY IMAGE LIGHTBOX                                        -->
+  <!-- ============================================================================ -->
+  <div id="lightbox-modal" class="dc-modal-backdrop" style="z-index: 70;">
+    <div class="dc-modal-panel relative max-w-2xl w-full rounded-3xl overflow-hidden" style="background: #0B0F19; border-color: #1E293B;">
+      <div class="flex items-center justify-between px-5 py-3.5 border-b border-slate-800">
+        <div>
+          <span id="lightbox-tag" class="text-[10px] font-bold uppercase tracking-widest block" style="color: #38BDF8 !important;">Nellys Tech Showcase</span>
+          <h4 id="lightbox-title" class="text-sm font-bold" style="color: #FFFFFF !important;">Grow Your Business Digitally</h4>
+        </div>
+        <button onclick="closeDcModal('lightbox-modal')" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center" style="color: #FFFFFF !important;">
+          <i class="fas fa-xmark" style="color: #FFFFFF !important;"></i>
+        </button>
+      </div>
+      <div class="relative bg-slate-950 flex items-center justify-center">
+        <img id="lightbox-img" src="assets/gallery/poster-01.jpg" alt="Gallery Preview" class="max-h-[70vh] w-auto object-contain mx-auto">
+        <button onclick="stepLightbox(-1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/85 hover:bg-cyan-600 flex items-center justify-center transition" style="color: #FFFFFF !important;">
+          <i class="fas fa-chevron-left" style="color: #FFFFFF !important;"></i>
+        </button>
+        <button onclick="stepLightbox(1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/85 hover:bg-cyan-600 flex items-center justify-center transition" style="color: #FFFFFF !important;">
+          <i class="fas fa-chevron-right" style="color: #FFFFFF !important;"></i>
+        </button>
+      </div>
+      <div class="px-5 py-3.5 border-t border-slate-800 flex items-center justify-between gap-3" style="background: #0B0F19;">
+        <span id="lightbox-counter" class="text-xs font-mono" style="color: #94A3B8 !important;">1 / 8</span>
+        <div class="flex items-center gap-2">
+          <button onclick="closeDcModal('lightbox-modal'); openDcModal('services-modal');" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold transition" style="color: #FFFFFF !important;">
+            All 20 Services
+          </button>
+          <button onclick="closeDcModal('lightbox-modal'); openDcModal('appointment-modal');" class="btn-nellys px-4 py-2 rounded-xl text-xs font-bold">
+            <span>Enquire Now &rarr;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================================ -->
+  <!-- POPUP MODAL 4: LOCATION & REGISTERED HEADQUARTERS                            -->
+  <!-- ============================================================================ -->
+  <div id="location-modal" class="dc-modal-backdrop">
+    <div class="dc-modal-panel rounded-3xl max-w-lg w-full p-6 space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-10 h-10 rounded-2xl tile-rose flex items-center justify-center text-lg">
+            <i class="fas fa-location-dot"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-extrabold dc-heading">Registered Headquarters</h3>
+            <p class="text-xs dc-muted">Kowdiar, Thiruvananthapuram, Kerala</p>
+          </div>
+        </div>
+        <button onclick="closeDcModal('location-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
+          <i class="fas fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="p-4 rounded-2xl dc-pill space-y-2 text-xs sm:text-sm">
+        <p class="font-extrabold dc-heading">Nellys Tech Private Limited</p>
+        <p class="leading-relaxed dc-text">
+          J-1A, TC 9/479(1) 23/2773, Jawahar Nagar,<br>
+          Kowdiar, Thiruvananthapuram, Kerala 695003, India
+        </p>
+        <div class="pt-2 border-t flex flex-wrap gap-4 text-xs" style="border-color: var(--dc-card-border);">
+          <span class="dc-text font-semibold"><i class="fas fa-phone text-emerald-500 mr-1"></i> 0471 2720004</span>
+          <span class="dc-text font-semibold"><i class="fas fa-envelope text-sky-500 mr-1"></i> nellystechai@gmail.com</span>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden border h-48 bg-slate-100" style="border-color: var(--dc-card-border);">
+        <iframe
+          title="Nellys Tech Kowdiar Location"
+          src="https://www.google.com/maps?q=Jawahar+Nagar,+Kowdiar,+Thiruvananthapuram,+Kerala+695003&output=embed"
+          class="w-full h-full border-0"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <div class="flex gap-2.5">
+        <button onclick="copyText('J-1A, TC 9/479(1) 23/2773, Jawahar Nagar, Kowdiar, Thiruvananthapuram, Kerala 695003', 'Address copied!')" class="flex-1 py-3 rounded-xl dc-pill font-bold text-xs">
+          <i class="far fa-copy mr-1"></i> Copy Address
+        </button>
+        <a href="https://www.google.com/maps/search/?api=1&query=Jawahar+Nagar+Kowdiar+Thiruvananthapuram+Kerala+695003" target="_blank" rel="noopener" class="flex-1 btn-nellys py-3 rounded-xl font-bold text-xs text-center">
+          <span><i class="fas fa-diamond-turn-right mr-1"></i> Open Google Maps</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================================ -->
+  <!-- POPUP MODAL 5: BOOK APPOINTMENT / STRATEGY CALL                              -->
+  <!-- ============================================================================ -->
+  <div id="appointment-modal" class="dc-modal-backdrop">
+    <div class="dc-modal-panel rounded-3xl max-w-lg w-full p-6">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <span class="dc-section-title text-[10px]">Let's Build Something Together</span>
+          <h3 class="text-xl font-extrabold dc-heading">Book Strategy Appointment</h3>
+        </div>
+        <button onclick="closeDcModal('appointment-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
+          <i class="fas fa-xmark"></i>
+        </button>
+      </div>
+
+      <form onsubmit="submitAppointment(event)" class="space-y-3.5 text-xs sm:text-sm">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold dc-heading mb-1">Your Name *</label>
+            <input id="appt-name" type="text" required placeholder="Full Name" class="w-full px-3.5 py-2.5 rounded-xl border">
+          </div>
+          <div>
+            <label class="block text-xs font-bold dc-heading mb-1">Phone / WhatsApp *</label>
+            <input id="appt-phone" type="tel" required placeholder="+91 98765 43210" class="w-full px-3.5 py-2.5 rounded-xl border">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold dc-heading mb-1">Preferred Date *</label>
+            <input id="appt-date" type="date" required class="w-full px-3.5 py-2.5 rounded-xl border">
+          </div>
+          <div>
+            <label class="block text-xs font-bold dc-heading mb-1">Capability / Pillar</label>
+            <select id="appt-service" class="w-full px-3.5 py-2.5 rounded-xl border">
+              <option>Both Pillars: Digital Branding + 360° IT</option>
+              <option>Pillar I: Digital Branding (10 Services)</option>
+              <option>Pillar II: IT & Business Solutions (10 Services)</option>
+              <option>01. Brand Identity & Logo Design</option>
+              <option>02. Digital Marketing Strategy</option>
+              <option>03. SEO & Online Visibility</option>
+              <option>04. Social Media Management</option>
+              <option>05. Content Creation</option>
+              <option>06. Podcasting & Audio Production</option>
+              <option>07. Video Marketing (4K Studio)</option>
+              <option>08. E-mail Campaigns</option>
+              <option>09. Lead Generation</option>
+              <option>10. Analytics & Reporting</option>
+              <option>11. IT Consulting</option>
+              <option>12. Custom Software Development</option>
+              <option>13. Web & Mobile Applications</option>
+              <option>14. Systems Integration</option>
+              <option>15. Database Management</option>
+              <option>16. Networking Infrastructure</option>
+              <option>17. Role-Based IT Training</option>
+              <option>18. Managed IT Services</option>
+              <option>19. DevOps & Cloud Infrastructure</option>
+              <option>20. Practical Cybersecurity</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold dc-heading mb-1">Project Brief / Goals</label>
+          <textarea id="appt-notes" rows="3" placeholder="Tell us briefly about your business and what you'd like to build or grow..." class="w-full px-3.5 py-2.5 rounded-xl border"></textarea>
+        </div>
+
+        <button type="submit" class="btn-nellys w-full py-3.5 rounded-xl font-bold text-sm">
+          <span>Confirm &amp; Send Appointment Request &rarr;</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================================ -->
+  <!-- POPUP MODAL 6: PAY NOW / CREATE INSTANT QUOTATION                            -->
+  <!-- ============================================================================ -->
+  <div id="pay-modal" class="dc-modal-backdrop">
+    <div class="dc-modal-panel rounded-3xl max-w-lg w-full p-6 space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="dc-section-title text-[10px]">Payments &amp; Estimates</span>
+          <h3 class="text-xl font-extrabold dc-heading">Pay Now / Request Quotation</h3>
+        </div>
+        <button onclick="closeDcModal('pay-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
+          <i class="fas fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="p-4 rounded-2xl dc-pill space-y-1.5 text-xs">
+        <div class="flex items-center justify-between">
+          <span class="font-bold dc-heading">Official Billing Entity:</span>
+          <span class="px-2 py-0.5 rounded bg-emerald-600 text-white font-bold text-[10px]" style="color: #FFFFFF !important;">VERIFIED</span>
+        </div>
+        <p class="dc-heading font-extrabold text-sm">Nellys Tech Private Limited</p>
+        <p class="dc-muted">Kowdiar, Thiruvananthapuram, Kerala 695003 &bull; Phone: 0471 2720004</p>
+      </div>
+
+      <form onsubmit="submitQuotation(event)" class="space-y-3 text-xs sm:text-sm">
+        <div>
+          <label class="block text-xs font-bold dc-heading mb-1">Client / Company Name *</label>
+          <input id="quote-client" type="text" required placeholder="Your Company Name" class="w-full px-3.5 py-2.5 rounded-xl border">
+        </div>
+        <div>
+          <label class="block text-xs font-bold dc-heading mb-1">Select Package / Capability *</label>
+          <select id="quote-service" class="w-full px-3.5 py-2.5 rounded-xl border">
+            <option>Complete Growth Partner (Branding + IT Infrastructure)</option>
+            <option>Brand Identity, Website & SEO Launchpad</option>
+            <option>Custom Web / Mobile Application Development</option>
+            <option>Social Media, 4K Video & Podcast Retainer</option>
+            <option>Cloud, DevOps, Cybersecurity & Managed IT</option>
+          </select>
+        </div>
+        <div class="flex gap-2.5 pt-2">
+          <a href="tel:04712720004" class="flex-1 py-3 rounded-xl dc-pill font-bold text-xs text-center flex items-center justify-center gap-1.5">
+            <i class="fas fa-phone text-emerald-500"></i> Call Billing Desk
+          </a>
+          <button type="submit" class="flex-1 btn-nellys py-3 rounded-xl font-bold text-xs">
+            <span>Get Quote on WhatsApp &rarr;</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================================ -->
+  <!-- POPUP MODAL 7: CORPORATE & BANK INFO MODAL                                   -->
+  <!-- ============================================================================ -->
+  <div id="bank-modal" class="dc-modal-backdrop">
+    <div class="dc-modal-panel rounded-3xl max-w-md w-full p-6 space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-10 h-10 rounded-2xl tile-amber flex items-center justify-center text-lg">
+            <i class="fas fa-building-columns"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-extrabold dc-heading">Corporate &amp; Billing Info</h3>
+            <p class="text-xs dc-muted">Nellys Tech Private Limited</p>
+          </div>
+        </div>
+        <button onclick="closeDcModal('bank-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
+          <i class="fas fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="p-4 rounded-2xl dc-pill space-y-2.5 text-xs">
+        <div class="flex justify-between py-1 border-b" style="border-color: var(--dc-card-border);">
+          <span class="dc-muted">Registered Name</span>
+          <span class="font-bold dc-heading">Nellys Tech Private Limited</span>
+        </div>
+        <div class="flex justify-between py-1 border-b" style="border-color: var(--dc-card-border);">
+          <span class="dc-muted">Headquarters</span>
+          <span class="font-bold dc-heading">Kowdiar, Thiruvananthapuram</span>
+        </div>
+        <div class="flex justify-between py-1 border-b" style="border-color: var(--dc-card-border);">
+          <span class="dc-muted">Official Phone</span>
+          <span class="font-bold" style="color: var(--accent);">0471 2720004</span>
+        </div>
+        <div class="flex justify-between py-1 border-b" style="border-color: var(--dc-card-border);">
+          <span class="dc-muted">Official Email</span>
+          <span class="font-bold dc-heading">nellystechai@gmail.com</span>
+        </div>
+        <div class="flex justify-between py-1">
+          <span class="dc-muted">Official Web</span>
+          <span class="font-bold" style="color: var(--accent);">nellystech.in</span>
+        </div>
+      </div>
+
+      <a href="mailto:nellystechai@gmail.com?subject=Request%20for%20Official%20Bank%20%26%20Billing%20Details" class="btn-nellys w-full py-3 rounded-xl font-bold text-xs text-center block">
+        <span>Request Proforma Invoice / Bank Details</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ============================================================================ -->
+  <!-- POPUP MODAL 8: QR CODE MODAL                                                 -->
+  <!-- ============================================================================ -->
+  <div id="qr-modal" class="dc-modal-backdrop">
+    <div class="dc-modal-panel rounded-3xl max-w-sm w-full p-6 text-center space-y-4">
+      <div class="flex items-center justify-between">
+        <span class="dc-section-title">Scan Digital Card</span>
+        <button onclick="closeDcModal('qr-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
+          <i class="fas fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="p-4 rounded-3xl dc-pill inline-block mx-auto">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fnellystech.in&color=0B0F19&bgcolor=FFFFFF&margin=10" alt="Nellys Tech QR Code" class="w-48 h-48 rounded-2xl mx-auto shadow-sm bg-white p-2">
+      </div>
+
+      <div>
+        <h4 class="text-base font-extrabold dc-heading">Nellys Tech Pvt. Ltd.</h4>
+        <p class="text-xs dc-muted mt-0.5">Point your phone camera to open our card or website</p>
+      </div>
+
+      <button onclick="downloadVCard()" class="btn-nellys w-full py-3 rounded-xl font-bold text-xs">
+        <span><i class="fas fa-user-plus mr-1"></i> Save Contact (.vcf)</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================================ -->
+  <!-- POPUP MODAL 9: AUTO REPLY / QUICK WHATSAPP COMPOSER                          -->
+  <!-- ============================================================================ -->
+  <div id="autoreply-modal" class="dc-modal-backdrop">
+    <div class="dc-modal-panel rounded-3xl max-w-md w-full p-6 space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-10 h-10 rounded-2xl tile-emerald flex items-center justify-center text-xl">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-extrabold dc-heading">Instant Auto-Reply</h3>
+            <p class="text-xs dc-muted">Send a quick message to our Kowdiar desk</p>
+          </div>
+        </div>
+        <button onclick="closeDcModal('autoreply-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
+          <i class="fas fa-xmark"></i>
+        </button>
+      </div>
+
+      <form onsubmit="sendAutoReply(event)" class="space-y-3 text-xs sm:text-sm">
+        <div>
+          <label class="block text-xs font-bold dc-heading mb-1">Your Name *</label>
+          <input id="auto-name" type="text" required placeholder="Enter your name" class="w-full px-3.5 py-2.5 rounded-xl border">
+        </div>
+        <div>
+          <label class="block text-xs font-bold dc-heading mb-1">Quick Topic</label>
+          <select id="auto-topic" class="w-full px-3.5 py-2.5 rounded-xl border">
+            <option>Send me the Nellys Tech 2026 Brochure & Service List</option>
+            <option>I want to discuss a Website / Mobile App / Software project</option>
+            <option>I want to discuss Digital Branding, SEO & Video/Podcasting</option>
+            <option>Schedule a call with the Kowdiar Office team</option>
+          </select>
+        </div>
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition" style="color: #FFFFFF !important;">
+          <i class="fab fa-whatsapp text-base" style="color: #FFFFFF !important;"></i>
+          <span style="color: #FFFFFF !important;">Send Instant Message</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================================ -->
+  <!-- POPUP MODAL 10: REVIEW US MODAL                                              -->
+  <!-- ============================================================================ -->
+  <div id="review-modal" class="dc-modal-backdrop">
+    <div class="dc-modal-panel rounded-3xl max-w-md w-full p-6 space-y-4 text-center">
+      <div class="flex justify-end">
+        <button onclick="closeDcModal('review-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
+          <i class="fas fa-xmark"></i>
+        </button>
+      </div>
+      <div class="w-14 h-14 rounded-2xl tile-amber flex items-center justify-center text-2xl mx-auto">
+        <i class="fas fa-star"></i>
+      </div>
+      <h3 class="text-xl font-extrabold dc-heading">Rate Your Experience</h3>
+      <p class="text-xs dc-muted">How would you rate Nellys Tech Pvt. Ltd.?</p>
+
+      <div id="star-selector" class="flex items-center justify-center gap-2 text-2xl py-1" style="color: #F59E0B;">
+        <button type="button" onclick="setRating(1)" class="hover:scale-110 transition"><i class="fas fa-star" style="color: #F59E0B !important;"></i></button>
+        <button type="button" onclick="setRating(2)" class="hover:scale-110 transition"><i class="fas fa-star" style="color: #F59E0B !important;"></i></button>
+        <button type="button" onclick="setRating(3)" class="hover:scale-110 transition"><i class="fas fa-star" style="color: #F59E0B !important;"></i></button>
+        <button type="button" onclick="setRating(4)" class="hover:scale-110 transition"><i class="fas fa-star" style="color: #F59E0B !important;"></i></button>
+        <button type="button" onclick="setRating(5)" class="hover:scale-110 transition"><i class="fas fa-star" style="color: #F59E0B !important;"></i></button>
+      </div>
+
+      <form onsubmit="submitReview(event)" class="space-y-3 text-left text-xs">
+        <input type="text" required placeholder="Your Name" class="w-full px-3.5 py-2.5 rounded-xl border">
+        <textarea rows="3" required placeholder="Share your feedback..." class="w-full px-3.5 py-2.5 rounded-xl border"></textarea>
+        <button type="submit" class="btn-nellys w-full py-3 rounded-xl font-bold text-xs">
+          <span>Submit Feedback</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================================ -->
+  <!-- POPUP MODAL 11: INSTALL / SAVE CARD INSTRUCTIONS                             -->
+  <!-- ============================================================================ -->
+  <div id="install-modal" class="dc-modal-backdrop">
+    <div class="dc-modal-panel rounded-3xl max-w-md w-full p-6 space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-extrabold dc-heading">Save Digital Card to Phone</h3>
+        <button onclick="closeDcModal('install-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
+          <i class="fas fa-xmark"></i>
+        </button>
+      </div>
+      <div class="space-y-3 text-xs dc-text">
+        <div class="p-3.5 rounded-2xl dc-pill flex items-start gap-3">
+          <i class="fab fa-apple text-lg dc-heading mt-0.5"></i>
+          <div>
+            <strong class="dc-heading block">iPhone / Safari:</strong>
+            Tap the <strong>Share</strong> icon in Safari and select <strong>"Add to Home Screen"</strong>.
+          </div>
+        </div>
+        <div class="p-3.5 rounded-2xl dc-pill flex items-start gap-3">
+          <i class="fab fa-android text-lg text-emerald-500 mt-0.5"></i>
+          <div>
+            <strong class="dc-heading block">Android / Chrome:</strong>
+            Tap the <strong>3-dot menu</strong> in Chrome and select <strong>"Add to Home screen"</strong>.
+          </div>
+        </div>
+      </div>
+      <button onclick="downloadVCard(); closeDcModal('install-modal');" class="btn-nellys w-full py-3 rounded-xl font-bold text-xs">
+        <span><i class="fas fa-address-card mr-1.5"></i> Download Contact Card (.vcf) Now</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================================ -->
+  <!-- POPUP MODAL 12: FULL COMPANY CHARTER & 6 PROMISES                            -->
+  <!-- ============================================================================ -->
+  <div id="about-modal" class="dc-modal-backdrop">
+    <div class="dc-modal-panel rounded-3xl max-w-3xl w-full max-h-[88vh] flex flex-col overflow-hidden">
+      <div class="px-6 py-4 flex items-center justify-between" style="background: #0B0F19; border-bottom: 1px solid #1E293B;">
+        <div>
+          <span class="text-[10px] font-bold uppercase tracking-widest block" style="color: #38BDF8 !important;">Corporate Profile 2026</span>
+          <h3 class="text-lg font-extrabold" style="color: #FFFFFF !important;">Nellys Tech Pvt. Ltd. &bull; Purpose, Made Practical</h3>
+        </div>
+        <button onclick="closeDcModal('about-modal')" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center" style="color: #FFFFFF !important;">
+          <i class="fas fa-xmark" style="color: #FFFFFF !important;"></i>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto space-y-5 text-xs sm:text-sm dc-text">
+        <div class="p-4 rounded-2xl dc-pill">
+          <h4 class="font-extrabold dc-heading text-base mb-1">One Partner. Every Possibility.</h4>
+          <p class="dc-text">Every business needs systems that work and people who know it exists. At Nellys Tech, our software engineers, cloud and security experts work alongside our brand, content and marketing specialists right here in Kowdiar, Thiruvananthapuram.</p>
+        </div>
+
+        <div>
+          <h4 class="dc-section-title mb-2.5">Six Promises We Live By</h4>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div class="p-3.5 rounded-xl dc-pill">
+              <strong class="dc-heading block">01. Clarity</strong>
+              <span class="text-xs dc-text">Plain language, clear scope and no surprises in timelines or costs.</span>
+            </div>
+            <div class="p-3.5 rounded-xl dc-pill">
+              <strong class="dc-heading block">02. Reliability</strong>
+              <span class="text-xs dc-text">We do what we say, when we say it. Built for 99.99% uptime.</span>
+            </div>
+            <div class="p-3.5 rounded-xl dc-pill">
+              <strong class="dc-heading block">03. Security by Default</strong>
+              <span class="text-xs dc-text">Zero Trust protection is built in from day one, not added at the end.</span>
+            </div>
+            <div class="p-3.5 rounded-xl dc-pill">
+              <strong class="dc-heading block">04. Business First</strong>
+              <span class="text-xs dc-text">Technology and marketing serve measurable commercial ROI.</span>
+            </div>
+            <div class="p-3.5 rounded-xl dc-pill">
+              <strong class="dc-heading block">05. Craft</strong>
+              <span class="text-xs dc-text">Deep pride in every line of code, design, copy, and second of sound.</span>
+            </div>
+            <div class="p-3.5 rounded-xl dc-pill">
+              <strong class="dc-heading block">06. Partnership</strong>
+              <span class="text-xs dc-text">Your success is our reference. We act like part of your team.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nellys Tech Official Global JS -->
+  <script src="js/global.js"></script>
+
+  <!-- DIGITAL CARD INTERACTIVE CONTROLLER -->
+  <script>
+    const galleryItems = [
+      { src: "assets/gallery/poster-01.jpg", tag: "One Partner • Every Possibility", title: "Grow Your Business Digitally" },
+      { src: "assets/gallery/poster-02.jpg", tag: "Executive Visibility & Growth", title: "Complete Solution for Digital Branding" },
+      { src: "assets/gallery/poster-03.jpg", tag: "Web & Mobile Engineering", title: "Build Modern Web & Mobile Applications" },
+      { src: "assets/gallery/poster-04.jpg", tag: "Custom Software Development", title: "Software That Fits Your Workflow" },
+      { src: "assets/gallery/poster-05.jpg", tag: "Record + Amplify Studio", title: "4K Video & Podcast Production" },
+      { src: "assets/gallery/poster-06.jpg", tag: "Build + Protect Infrastructure", title: "Zero Trust Cybersecurity & Cloud Infra" },
+      { src: "assets/gallery/poster-07.jpg", tag: "Performance Marketing", title: "Attract & Convert More Warm Leads" },
+      { src: "assets/gallery/poster-08.jpg", tag: "Corporate Upskilling", title: "Practical AI & Enterprise IT Training" }
+    ];
+
+    const servicesData = [
+      {
+        id: 1, num: "01", pillar: "branding", pillarLabel: "Digital Branding",
+        title: "Brand Identity & Logo Design", headline: "Look Like Who You Really Are",
+        img: "assets/services/service-01.jpg",
+        desc: "Your brand is more than a logo. It's the look, feel and voice that make people recognise and remember you. We start by understanding who you are and who you want to reach, then build an identity that says it clearly.",
+        deliverables: ["Brand discovery and positioning", "Logo design with variations", "Colour palette, typography and visual style", "Brand guidelines and templates", "Stationery, social media and presentation designs"],
+        quote: "Ideal for new businesses and rebrands, helping build distinctive, globally relevant brand identities."
+      },
+      {
+        id: 2, num: "02", pillar: "branding", pillarLabel: "Digital Branding",
+        title: "Digital Marketing Strategy", headline: "A Plan, Not Guesswork",
+        img: "assets/services/service-02.jpg",
+        desc: "Posting here, advertising there, trying whatever is trending: it's tiring and expensive without direction. A clear strategy connects your marketing to your goals, your audience and your budget.",
+        deliverables: ["Audience and competitor research", "Channel selection and messaging framework", "Content and campaign calendar", "Budget and priority recommendations", "Goals, tracking plan and review rhythm"],
+        quote: "You get focused effort, wiser spending and marketing everyone on your team understands."
+      },
+      {
+        id: 3, num: "03", pillar: "branding", pillarLabel: "Digital Branding",
+        title: "SEO & Online Visibility", headline: "Get Found When It Counts",
+        img: "assets/services/service-03.jpg",
+        desc: "When someone searches for what you offer, do you show up? If your website exists but is rarely found, you're missing customers who were already looking for you.",
+        deliverables: ["Website and keyword audit", "On-page optimisation of content and structure", "Technical SEO: speed, mobile-friendliness and indexing", "Local SEO and business listing management", "Content recommendations and progress reporting"],
+        quote: "Especially valuable for businesses that want to appear in searches, bringing relevant visitors without paying for every click."
+      },
+      {
+        id: 4, num: "04", pillar: "branding", pillarLabel: "Digital Branding",
+        title: "Social Media Management", headline: "Stay Active - Leave the Stress",
+        img: "assets/services/service-04.jpg",
+        desc: "We live in an era dominated by social media. We run your channels consistently, in a way that suits your brand and keeps your audience engaged.",
+        deliverables: ["Profile set-up and optimisation", "Content planning, design and scheduling", "Community engagement and response handling", "Paid social campaign support", "Monthly performance summaries & targeted promotions"],
+        quote: "A steady, polished presence that keeps your audience engaged."
+      },
+      {
+        id: 5, num: "05", pillar: "branding", pillarLabel: "Digital Branding",
+        title: "Content Creation", headline: "Words and Visuals That Build Trust",
+        img: "assets/services/service-05.jpg",
+        desc: "Customers want to know what you do and why they should trust you. Good content answers both. If you have plenty of expertise but little time to write, design or publish, we do it for you.",
+        deliverables: ["Website highlights and landing pages", "Blog articles and thought-leadership pieces", "Case studies and company profiles", "Brochures, presentations and one-pagers", "Graphics, infographics and editorial calendars"],
+        quote: "You end up with a library of high-quality content that supports your website, social media and emails."
+      },
+      {
+        id: 6, num: "06", pillar: "branding", pillarLabel: "Digital Branding",
+        title: "Podcasting & Audio Production", headline: "Become a Voice Worth Listening To",
+        img: "assets/services/service-06.jpg",
+        desc: "A podcast lets people hear your voice, not just read your words. It builds authority and a personal connection few other formats can match. We handle everything from the first idea to the published episode.",
+        deliverables: ["Concept, format and episode planning", "Recording support, presenter support and guest coordination", "Editing, mixing and sound clean-up", "Show notes, cover art and publishing to major platforms", "Short audio clips for social media & live streaming support"],
+        quote: "A great choice for founders, executives and organisations that want to share their expertise through conversation."
+      },
+      {
+        id: 7, num: "07", pillar: "branding", pillarLabel: "Digital Branding",
+        title: "Video Marketing", headline: "Show It. Don't Just Tell It.",
+        img: "assets/services/service-07.jpg",
+        desc: "From quick social clips to polished 4K brand films, video explains, shows and persuades. If your product or story is best seen rather than described, video does the job.",
+        deliverables: ["Concept and scripting", "Shooting guidance and 4K editing", "Brand and product videos, explainers and testimonials", "Short clips and long videos for social media platforms", "Captions, thumbnails, publishing support & TV programme concepts"],
+        quote: "Expect higher engagement and a clearer understanding of what you offer."
+      },
+      {
+        id: 8, num: "08", pillar: "branding", pillarLabel: "Digital Branding",
+        title: "E-mail Campaigns", headline: "Reach People Who Already Know You",
+        img: "assets/services/service-08.jpg",
+        desc: "Email goes straight to the people who matter most: your existing customers and leads. Done well, it keeps them informed and brings them back.",
+        deliverables: ["Mailing-list setup and segmentation guidance", "Newsletter and campaign design", "Copywriting and subject line testing", "Automated welcome and follow-up sequences", "Delivery, open and click reporting"],
+        quote: "Stronger relationships and repeat engagement from people who already know you."
+      },
+      {
+        id: 9, num: "09", pillar: "branding", pillarLabel: "Digital Branding",
+        title: "Lead Generation", headline: "More Enquiries. Better Growth.",
+        img: "assets/services/service-09.jpg",
+        desc: "We attract and capture enquiries from people likely to become customers, and we make sure your team is ready to follow them up.",
+        deliverables: ["Target audience and offer definition", "Landing pages and lead capture forms", "Search, social and content-driven campaigns", "Lead tracking and follow-up workflows", "Optimisation for lead quality (Leads → Sales → Growth)"],
+        quote: "A steadier flow of qualified enquiries, plus clear insight into what brings them in."
+      },
+      {
+        id: 10, num: "10", pillar: "branding", pillarLabel: "Digital Branding",
+        title: "Analytics & Reporting", headline: "Know What's Working",
+        img: "assets/services/service-10.jpg",
+        desc: "Which posts bring customers? Which campaigns are wasting money? We turn website and marketing data into plain-language insight you can act on.",
+        deliverables: ["Analytics set-up and goal tracking", "Custom dashboards", "Monthly and quarterly reports", "Channel, content and campaign comparison", "Recommendations for the next period"],
+        quote: "Make decisions based on marketing data and evidence, with insights that improve over time."
+      },
+      {
+        id: 11, num: "11", pillar: "it", pillarLabel: "360° IT Solutions",
+        title: "IT Consulting", headline: "Think Before You Spend",
+        img: "assets/services/service-11.jpg",
+        desc: "Technology decisions can be expensive, and the wrong choice is costly to undo. We give independent, business-minded advice before you commit money.",
+        deliverables: ["IT assessment and gap analysis", "Technology roadmaps and budgeting guidance", "Tool and vendor selection support", "Digital transformation planning", "Architecture and project reviews"],
+        quote: "Leave with confident decisions, a clear plan and fewer costly detours."
+      },
+      {
+        id: 12, num: "12", pillar: "it", pillarLabel: "360° IT Solutions",
+        title: "Custom Software Development", headline: "Software That Fits You, Not the Other Way Round",
+        img: "assets/services/service-12.jpg",
+        desc: "Off-the-shelf tools are built for everyone, which often means they fit no one perfectly. We build applications around the way your business actually runs.",
+        deliverables: ["CRM, ERP modules, inventory, billing and workflow tools", "Dashboards, portals and internal tools", "Automation of repetitive manual work", "Testing, documentation and handover"],
+        quote: "Less manual work, fewer errors and a system that grows with you."
+      },
+      {
+        id: 13, num: "13", pillar: "it", pillarLabel: "360° IT Solutions",
+        title: "Web & Mobile Applications", headline: "The Digital World is at Your Fingertip",
+        img: "assets/services/service-13.jpg",
+        desc: "Your website or app is often the first thing a customer sees. It must load fast, be easy to use and look right on every screen, from a phone to a large monitor.",
+        deliverables: ["Business websites and e-commerce stores", "Web applications and customer portals", "Android and iOS app development (App Store & Google Play)", "UI/UX design and prototypes you can see before build", "Performance tuning, hosting set-up and ongoing updates"],
+        quote: "Whether launching online, modernising an old site or building a mobile app, we handle design, build, deploy and upkeep."
+      },
+      {
+        id: 14, num: "14", pillar: "it", pillarLabel: "360° IT Solutions",
+        title: "Systems Integration", headline: "Make Your Tools Talk to Each Other",
+        img: "assets/services/service-14.jpg",
+        desc: "Does your team type the same information into three different systems? We provide convenient, affordable software integrations that enable your systems to work as one.",
+        deliverables: ["Integration of accounting, CRM, e-commerce, HR and operations tools", "API development and third-party connections", "Data synchronisation and migration", "Workflow automation between systems", "Documentation and ongoing support"],
+        quote: "Information flows once, duplication disappears and decisions get faster."
+      },
+      {
+        id: 15, num: "15", pillar: "it", pillarLabel: "360° IT Solutions",
+        title: "Database Management", headline: "Your Data: Fast, Safe and Recoverable",
+        img: "assets/services/service-15.jpg",
+        desc: "Customer records, orders, invoices and history all live in your databases. We design, protect and tune them with expert care.",
+        deliverables: ["Database design and schema planning", "Set-up, migration and upgrades", "Performance tuning and query optimisation", "Backup, recovery and retention planning", "Access control and data integrity checks"],
+        quote: "Ideal if your data is growing, your applications have slowed down or you need reliable backup and recovery."
+      },
+      {
+        id: 16, num: "16", pillar: "it", pillarLabel: "360° IT Solutions",
+        title: "Networking", headline: "A Network You Never Have to Think About",
+        img: "assets/services/service-16.jpg",
+        desc: "A good network is invisible. We plan, install and maintain the wired and wireless networks that keep your people connected and productive.",
+        deliverables: ["Office network design and cabling guidance", "Wi-Fi planning and set-up", "Routers, switches, firewalls and VPN configuration", "Multi-site and remote-access connectivity", "Troubleshooting, monitoring and support"],
+        quote: "New office, growing team or a connection that keeps letting you down? We build it right the first time."
+      },
+      {
+        id: 17, num: "17", pillar: "it", pillarLabel: "360° IT Solutions",
+        title: "IT Training", headline: "Skills That Stay With You",
+        img: "assets/services/service-17.jpg",
+        desc: "AI and technology are only as effective as the people who use them. Our practical, role-based training builds real skills inside your organisation.",
+        deliverables: ["Corporate training on tools and platforms", "Workshops on cloud, security awareness and productivity", "Skill programmes for students and early-career professionals", "Customised curriculum and hands-on labs", "Assessments and learning materials"],
+        quote: "Perfect for companies upskilling their teams and individuals building technical careers."
+      },
+      {
+        id: 18, num: "18", pillar: "it", pillarLabel: "360° IT Solutions",
+        title: "Managed Services", headline: "Your Own IT Team, Without Hiring One",
+        img: "assets/services/service-18.jpg",
+        desc: "Managed services gives you a dedicated IT team for a predictable monthly arrangement so your systems stay healthy, updated and monitored.",
+        deliverables: ["Helpdesk and user support", "Device, user and software management", "Patching, updates and health monitoring", "Backup and security oversight", "Regular reporting and service reviews"],
+        quote: "Problems are spotted early, fixed quickly and reported clearly, so your IT simply keeps working."
+      },
+      {
+        id: 19, num: "19", pillar: "it", pillarLabel: "360° IT Solutions",
+        title: "DevOps & Cloud Infrastructure", headline: "Launch Faster. Stay Online. Avoid Unexpected Costs.",
+        img: "assets/services/service-19.jpg",
+        desc: "Behind every smooth app is a well-built engine. We set up the practices and cloud platforms that let software be released quickly, safely and repeatedly.",
+        deliverables: ["Cloud architecture and migration planning", "Infrastructure set-up on major cloud platforms", "Automated build, test and release (CI/CD)", "Containers and environment management", "Monitoring, logging, backups and cost optimisation"],
+        quote: "A great fit if you ship software often, are moving off on-premise servers or want predictable cloud bills."
+      },
+      {
+        id: 20, num: "20", pillar: "it", pillarLabel: "360° IT Solutions",
+        title: "Cybersecurity", headline: "Protect What Matters Most",
+        img: "assets/services/service-20.jpg",
+        desc: "Good security isn't about fear. It's practical protection matched to the risks you really face across customer data, cloud tools and endpoints.",
+        deliverables: ["Security assessments and risk reviews", "Hardening of devices, identities and access", "Secure setup of endpoints, cloud and networks", "Policy guidance and staff awareness sessions", "Incident readiness planning"],
+        quote: "Your exposure drops, accountability gets clearer and your team learns what safe practice looks like."
+      }
+    ];
+
+    let currentFilter = 'all';
+    let showAllMobileGallery = false;
+    let currentLightboxIndex = 0;
+
+    function renderGalleries() {
+      const desktopTrack = document.getElementById('desktop-gallery-track');
+      if (desktopTrack) {
+        desktopTrack.innerHTML = galleryItems.map((item, idx) => `
+          <div onclick="openLightbox(${idx})" class="shrink-0 w-36 h-36 rounded-2xl overflow-hidden border cursor-pointer group relative shadow-sm" style="border-color: var(--dc-card-border);">
+            <img src="${item.src}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/35 transition flex items-center justify-center">
+              <i class="fas fa-magnifying-glass-plus opacity-0 group-hover:opacity-100 transition text-lg drop-shadow" style="color: #FFFFFF !important;"></i>
+            </div>
+          </div>
+        `).join('');
+      }
+      renderMobileGallery();
+    }
+
+    function renderMobileGallery() {
+      const mobileGrid = document.getElementById('mobile-gallery-grid');
+      const btn = document.getElementById('load-more-gallery-btn');
+      if (!mobileGrid) return;
+      const visibleItems = showAllMobileGallery ? galleryItems : galleryItems.slice(0, 6);
+      mobileGrid.innerHTML = visibleItems.map((item, idx) => `
+        <div onclick="openLightbox(${idx})" class="rounded-2xl overflow-hidden border cursor-pointer group relative aspect-square shadow-sm" style="border-color: var(--dc-card-border);">
+          <img src="${item.src}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+      `).join('');
+      if (btn) {
+        btn.textContent = showAllMobileGallery ? 'Show Fewer Images' : '+ Load More Images';
+      }
+    }
+
+    function toggleMobileGalleryAll() {
+      showAllMobileGallery = !showAllMobileGallery;
+      renderMobileGallery();
+    }
+
+    function scrollGallery(offset) {
+      const track = document.getElementById('desktop-gallery-track');
+      if (track) track.scrollBy({ left: offset, behavior: 'smooth' });
+    }
+
+    function openLightbox(idx) {
+      currentLightboxIndex = idx;
+      updateLightboxView();
+      openDcModal('lightbox-modal');
+    }
+
+    function stepLightbox(dir) {
+      currentLightboxIndex = (currentLightboxIndex + dir + galleryItems.length) % galleryItems.length;
+      updateLightboxView();
+    }
+
+    function updateLightboxView() {
+      const item = galleryItems[currentLightboxIndex];
+      document.getElementById('lightbox-img').src = item.src;
+      document.getElementById('lightbox-tag').textContent = item.tag;
+      document.getElementById('lightbox-title').textContent = item.title;
+      document.getElementById('lightbox-counter').textContent = `${currentLightboxIndex + 1} / ${galleryItems.length}`;
+    }
+
+    // Render 20 Services using the exact .service-card + .service-card-bg + .service-card-overlay design from global.css!
+    function renderServicesModal(filter = 'all', query = '') {
+      const grid = document.getElementById('services-modal-grid');
+      if (!grid) return;
+
+      const q = query.trim().toLowerCase();
+      const filtered = servicesData.filter(s => {
+        const matchesPillar = filter === 'all' || s.pillar === filter;
+        const matchesQuery = !q || s.title.toLowerCase().includes(q) || s.headline.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q) || s.deliverables.some(d => d.toLowerCase().includes(q));
+        return matchesPillar && matchesQuery;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="col-span-full py-12 text-center dc-muted">No services found matching "${query}".</div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(s => `
+        <div class="service-card glass-panel p-6 sm:p-7 rounded-3xl space-y-4 flex flex-col justify-between transition-all hover:-translate-y-1">
+          <div class="service-card-bg" style="background-image: url('${s.img}');"></div>
+          <div class="service-card-overlay"></div>
+
+          <div class="relative z-10 space-y-3">
+            <div class="flex justify-between items-start">
+              <span class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest bg-cyan-950 px-3 py-1 rounded-full border border-cyan-500/30">
+                ${s.num} / ${s.pillarLabel}
+              </span>
+            </div>
+            <h3>${s.title}</h3>
+            <h4>${s.headline}</h4>
+            <p>${s.desc}</p>
+
+            <div class="p-4 bg-slate-900/80 rounded-2xl border border-slate-800 space-y-2">
+              <span class="block uppercase tracking-wider">What We Deliver</span>
+              <ul class="space-y-1.5">
+                ${s.deliverables.map(d => `
+                  <li><i class="fas fa-chevron-right"></i> <span>${d}</span></li>
+                `).join('')}
+              </ul>
+            </div>
+          </div>
+
+          <div class="relative z-10 pt-3 border-t border-slate-700/50 space-y-3">
+            <p class="italic">"${s.quote}"</p>
+            <div class="flex items-center gap-2.5 pt-1">
+              <button onclick="openServiceDetail(${s.id})" class="flex-1 py-2.5 px-4 rounded-xl dc-pill font-bold text-xs">
+                Quick View
+              </button>
+              <a href="https://wa.me/914712720004?text=${encodeURIComponent(`Hello Nellys Tech, I would like to enquire about Service #${s.num}: ${s.title} (${s.headline}).`)}" target="_blank" rel="noopener" class="flex-1 btn-nellys py-2.5 px-4 rounded-xl font-bold text-xs text-center flex items-center justify-center gap-1.5">
+                <i class="fab fa-whatsapp"></i> <span>Enquire Now</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterServices(pillar) {
+      currentFilter = pillar;
+      document.querySelectorAll('.srv-tab').forEach(btn => {
+        btn.className = 'srv-tab dc-card px-4 py-2 rounded-xl text-xs font-bold dc-heading';
+      });
+      const activeBtn = document.getElementById(`srv-tab-${pillar}`);
+      if (activeBtn) {
+        activeBtn.className = 'srv-tab btn-nellys px-4 py-2 rounded-xl text-xs font-bold';
+      }
+      const searchVal = document.getElementById('service-search-input')?.value || '';
+      renderServicesModal(currentFilter, searchVal);
+    }
+
+    function searchServices(val) {
+      renderServicesModal(currentFilter, val);
+    }
+
+    function openServiceDetail(id) {
+      const s = servicesData.find(item => item.id === id);
+      if (!s) return;
+      document.getElementById('detail-service-img').src = s.img;
+      document.getElementById('detail-service-badge').textContent = `${s.num} / ${s.pillarLabel}`;
+      document.getElementById('detail-service-title').textContent = s.title;
+      document.getElementById('detail-service-headline').textContent = s.headline;
+      document.getElementById('detail-service-desc').textContent = s.desc;
+      document.getElementById('detail-service-list').innerHTML = s.deliverables.map(d => `
+        <li class="flex items-start gap-2">
+          <i class="fas fa-circle-check text-cyan-500 mt-0.5 shrink-0"></i>
+          <span>${d}</span>
+        </li>
+      `).join('');
+      document.getElementById('detail-service-quote').textContent = `"${s.quote}"`;
+      document.getElementById('detail-whatsapp-link').href = `https://wa.me/914712720004?text=${encodeURIComponent(`Hello Nellys Tech Pvt. Ltd., I want to enquire about ${s.num}. ${s.title} (${s.headline}).`)}`;
+      openDcModal('service-detail-modal');
+    }
+
+    function openDcModal(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.add('active');
+      document.body.classList.add('modal-open');
+    }
+
+    function closeDcModal(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.remove('active');
+      if (!document.querySelector('.dc-modal-backdrop.active')) {
+        document.body.classList.remove('modal-open');
+      }
+    }
+
+    document.querySelectorAll('.dc-modal-backdrop').forEach(backdrop => {
+      backdrop.addEventListener('click', (e) => {
+        if (e.target === backdrop) closeDcModal(backdrop.id);
+      });
+    });
+
+    function toggleReadMore() {
+      const content = document.getElementById('about-more-content');
+      const label = document.getElementById('read-more-label');
+      const icon = document.getElementById('read-more-icon');
+      const isHidden = content.classList.contains('hidden');
+      content.classList.toggle('hidden');
+      label.textContent = isHidden ? 'Read Less' : 'Read More';
+      icon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+
+    function toggleHours() {
+      const drop = document.getElementById('hours-dropdown');
+      const chev = document.getElementById('hours-chevron');
+      const isHidden = drop.classList.contains('hidden');
+      drop.classList.toggle('hidden');
+      chev.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+
+    function updateOpenStatus() {
+      const now = new Date();
+      const day = now.getDay();
+      const hour = now.getHours() + now.getMinutes() / 60;
+      const isOpen = (day >= 1 && day <= 5 && hour >= 9 && hour < 18) || (day === 6 && hour >= 9.5 && hour < 17);
+
+      const badge = document.getElementById('open-status-badge');
+      const dot = document.getElementById('open-status-dot');
+      const text = document.getElementById('open-status-text');
+      if (!badge) return;
+
+      if (isOpen) {
+        badge.className = 'badge-open px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider flex items-center gap-1';
+        dot.className = 'w-1.5 h-1.5 rounded-full bg-emerald-500';
+        text.textContent = 'OPEN';
+      } else {
+        badge.className = 'badge-closed px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider flex items-center gap-1';
+        dot.className = 'w-1.5 h-1.5 rounded-full bg-rose-500';
+        text.textContent = 'CLOSED';
+      }
+    }
+
+    function downloadVCard() {
+      const vcard = [
+        "BEGIN:VCARD",
+        "VERSION:3.0",
+        "FN:Nellys Tech Private Limited",
+        "ORG:Nellys Tech Pvt. Ltd.",
+        "TITLE:Enterprise Technology & Digital Branding Partner",
+        "TEL;TYPE=WORK,VOICE:04712720004",
+        "EMAIL;TYPE=PREF,INTERNET:nellystechai@gmail.com",
+        "URL:https://nellystech.in",
+        "ADR;TYPE=WORK:;;J-1A, TC 9/479(1) 23/2773, Jawahar Nagar, Kowdiar;Thiruvananthapuram;Kerala;695003;India",
+        "NOTE:Technology that runs your business. Visibility that grows it. 20 Capabilities across Digital Branding & 360 IT Solutions.",
+        "END:VCARD"
+      ].join("\r\n");
+
+      const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Nellys_Tech_Pvt_Ltd.vcf";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      if (window.showToast) showToast("Contact card (Nellys_Tech_Pvt_Ltd.vcf) downloaded!", "success");
+    }
+
+    function copyCardLink() {
+      const link = window.location.href.startsWith('http') ? window.location.href : 'https://nellystech.in';
+      copyText(link, 'Digital Card link copied to clipboard!');
+    }
+
+    function copyText(text, message) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+          if (window.showToast) showToast(message, 'success');
+        });
+      }
+    }
+
+    function submitAppointment(e) {
+      e.preventDefault();
+      const name = document.getElementById('appt-name').value;
+      const phone = document.getElementById('appt-phone').value;
+      const date = document.getElementById('appt-date').value;
+      const service = document.getElementById('appt-service').value;
+      const notes = document.getElementById('appt-notes').value;
+      const msg = `Hello Nellys Tech Pvt. Ltd.,\nI would like to book an appointment:\n• Name: ${name}\n• Phone: ${phone}\n• Preferred Date: ${date}\n• Capability: ${service}\n• Notes: ${notes || 'N/A'}`;
+      window.open(`https://wa.me/914712720004?text=${encodeURIComponent(msg)}`, '_blank');
+      closeDcModal('appointment-modal');
+    }
+
+    function submitQuotation(e) {
+      e.preventDefault();
+      const client = document.getElementById('quote-client').value;
+      const pkg = document.getElementById('quote-service').value;
+      const msg = `Hello Nellys Tech Pvt. Ltd.,\nPlease share a quotation for:\n• Client/Company: ${client}\n• Package: ${pkg}`;
+      window.open(`https://wa.me/914712720004?text=${encodeURIComponent(msg)}`, '_blank');
+      closeDcModal('pay-modal');
+    }
+
+    function sendAutoReply(e) {
+      e.preventDefault();
+      const name = document.getElementById('auto-name').value;
+      const topic = document.getElementById('auto-topic').value;
+      const msg = `Hi Nellys Tech! I am ${name}. ${topic}`;
+      window.open(`https://wa.me/914712720004?text=${encodeURIComponent(msg)}`, '_blank');
+      closeDcModal('autoreply-modal');
+    }
+
+    function setRating(stars) {
+      const btns = document.querySelectorAll('#star-selector i');
+      btns.forEach((icon, idx) => {
+        icon.className = idx < stars ? 'fas fa-star' : 'far fa-star';
+        icon.style.color = idx < stars ? '#F59E0B' : '#94A3B8';
+      });
+    }
+
+    function submitReview(e) {
+      e.preventDefault();
+      closeDcModal('review-modal');
+      if (window.showToast) showToast('Thank you for reviewing Nellys Tech Pvt. Ltd.!', 'success');
+    }
+
+    function shareCard(platform) {
+      const shareUrl = encodeURIComponent('https://nellystech.in');
+      const shareText = encodeURIComponent('Nellys Tech Pvt. Ltd. — Technology that runs your business. Visibility that grows it. (Kowdiar, Thiruvananthapuram)');
+      let url = '';
+      if (platform === 'whatsapp') url = `https://wa.me/?text=${shareText}%20${shareUrl}`;
+      else if (platform === 'facebook') url = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
+      else if (platform === 'linkedin') url = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
+      else if (platform === 'twitter') url = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`;
+      else {
+        copyCardLink();
+        return;
+      }
+      window.open(url, '_blank');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderGalleries();
+      renderServicesModal('all', '');
+      updateOpenStatus();
+      const dateInput = document.getElementById('appt-date');
+      if (dateInput) {
+        dateInput.value = new Date(Date.now() + 86400000).toISOString().split('T')[0];
+      }
+    });
+  </script>
+</body>
+</html>
