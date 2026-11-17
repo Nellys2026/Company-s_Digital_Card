@@ -7,7 +7,7 @@
   <meta name="description" content="Official Digital Card of Nellys Tech Private Limited (Kowdiar, Thiruvananthapuram). Technology that runs your business. Visibility that grows it. 20 Capabilities in Digital Branding & 360° IT Solutions.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-  <!-- Configure Tailwind BEFORE loading tailwind.cdn.js so OS dark mode never causes negative/inverted colors -->
+  <!-- Configure Tailwind BEFORE loading tailwind.cdn.js -->
   <script>
     window.tailwind = window.tailwind || {};
     window.tailwind.config = {
@@ -36,7 +36,7 @@
     }
   </script>
 
-  <!-- FontAwesome 6 -->
+  <!-- FontAwesome 6.4.0 CDN (Matches Nellys_Website cached version) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Nellys Tech Global Theme Stylesheet -->
   <link rel="stylesheet" href="css/global.css">
@@ -44,12 +44,11 @@
   <style>
     /* ============================================================
        Digital Card Theme System (Driven strictly by [data-theme])
-       Zero OS media-query conflicts — Crisp in both Light & Dark!
        ============================================================ */
     :root,
     [data-theme="light"] {
       --dc-page-bg: linear-gradient(135deg, #EEF2FF 0%, #F8FAFF 45%, #E0E7FF 100%);
-      --dc-shell-bg: rgba(248, 250, 255, 0.92);
+      --dc-shell-bg: rgba(248, 250, 255, 0.94);
       --dc-shell-border: #C7D2FE;
       --dc-shell-shadow: 0 20px 50px -12px rgba(79, 70, 229, 0.12);
 
@@ -76,7 +75,7 @@
 
     [data-theme="dark"] {
       --dc-page-bg: radial-gradient(circle at top left, #111827 0%, #090D16 55%, #030712 100%);
-      --dc-shell-bg: rgba(15, 23, 42, 0.82);
+      --dc-shell-bg: rgba(15, 23, 42, 0.85);
       --dc-shell-border: #1E293B;
       --dc-shell-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
 
@@ -177,6 +176,10 @@
     .icon-tile {
       transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       text-decoration: none;
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
     }
     .icon-tile:hover {
       transform: translateY(-4px) scale(1.04);
@@ -187,32 +190,56 @@
       font-size: 0.75rem;
       margin-top: 0.5rem;
       display: block;
+      line-height: 1.2;
     }
 
-    .tile-sky     { background: #E0F2FE; border: 1px solid #BAE6FD; color: #0284C7; }
-    .tile-emerald { background: #D1FAE5; border: 1px solid #A7F3D0; color: #059669; }
-    .tile-rose    { background: #FFE4E6; border: 1px solid #FECDD3; color: #E11D48; }
-    .tile-indigo  { background: #E0E7FF; border: 1px solid #C7D2FE; color: #4F46E5; }
-    .tile-amber   { background: #FEF3C7; border: 1px solid #FDE68A; color: #D97706; }
-    .tile-teal    { background: #CCFBF1; border: 1px solid #99F6E4; color: #0D9488; }
-    .tile-purple  { background: #F3E8FF; border: 1px solid #E9D5FF; color: #7E22CE; }
-    .tile-blue    { background: #DBEAFE; border: 1px solid #BFDBFE; color: #1D4ED8; }
-    .tile-pink    { background: #FCE7F3; border: 1px solid #FBCFE8; color: #DB2777; }
-    .tile-slate   { background: #E2E8F0; border: 1px solid #CBD5E1; color: #0F172A; }
+    .tile-sky     { background: #E0F2FE !important; border: 1px solid #BAE6FD !important; color: #0284C7 !important; }
+    .tile-emerald { background: #D1FAE5 !important; border: 1px solid #A7F3D0 !important; color: #059669 !important; }
+    .tile-rose    { background: #FFE4E6 !important; border: 1px solid #FECDD3 !important; color: #E11D48 !important; }
+    .tile-indigo  { background: #E0E7FF !important; border: 1px solid #C7D2FE !important; color: #4F46E5 !important; }
+    .tile-amber   { background: #FEF3C7 !important; border: 1px solid #FDE68A !important; color: #D97706 !important; }
+    .tile-teal    { background: #CCFBF1 !important; border: 1px solid #99F6E4 !important; color: #0D9488 !important; }
+    .tile-purple  { background: #F3E8FF !important; border: 1px solid #E9D5FF !important; color: #7E22CE !important; }
+    .tile-blue    { background: #DBEAFE !important; border: 1px solid #BFDBFE !important; color: #1D4ED8 !important; }
+    .tile-pink    { background: #FCE7F3 !important; border: 1px solid #FBCFE8 !important; color: #DB2777 !important; }
+    .tile-slate   { background: #E2E8F0 !important; border: 1px solid #CBD5E1 !important; color: #0F172A !important; }
 
-    [data-theme="dark"] .tile-sky     { background: rgba(2, 132, 199, 0.18);  border-color: rgba(56, 189, 248, 0.35);  color: #38BDF8; }
-    [data-theme="dark"] .tile-emerald { background: rgba(5, 150, 105, 0.18);  border-color: rgba(52, 211, 153, 0.35);  color: #34D399; }
-    [data-theme="dark"] .tile-rose    { background: rgba(225, 29, 72, 0.18);  border-color: rgba(251, 113, 133, 0.35); color: #FB7185; }
-    [data-theme="dark"] .tile-indigo  { background: rgba(79, 70, 229, 0.20);  border-color: rgba(129, 140, 248, 0.38); color: #818CF8; }
-    [data-theme="dark"] .tile-amber   { background: rgba(217, 119, 6, 0.18);  border-color: rgba(251, 191, 36, 0.35);  color: #FBBF24; }
-    [data-theme="dark"] .tile-teal    { background: rgba(13, 148, 136, 0.18); border-color: rgba(45, 212, 191, 0.35);  color: #2DD4BF; }
-    [data-theme="dark"] .tile-purple  { background: rgba(126, 34, 206, 0.18); border-color: rgba(192, 132, 252, 0.35); color: #C084FC; }
-    [data-theme="dark"] .tile-blue    { background: rgba(29, 78, 216, 0.20);  border-color: rgba(96, 165, 250, 0.38);  color: #60A5FA; }
-    [data-theme="dark"] .tile-pink    { background: rgba(219, 39, 119, 0.18); border-color: rgba(244, 114, 182, 0.35); color: #F472B6; }
-    [data-theme="dark"] .tile-slate   { background: rgba(51, 65, 85, 0.45);   border-color: rgba(148, 163, 184, 0.35); color: #F8FAFC; }
+    [data-theme="dark"] .tile-sky     { background: rgba(2, 132, 199, 0.20) !important;  border-color: rgba(56, 189, 248, 0.38) !important;  color: #38BDF8 !important; }
+    [data-theme="dark"] .tile-emerald { background: rgba(5, 150, 105, 0.20) !important;  border-color: rgba(52, 211, 153, 0.38) !important;  color: #34D399 !important; }
+    [data-theme="dark"] .tile-rose    { background: rgba(225, 29, 72, 0.20) !important;  border-color: rgba(251, 113, 133, 0.38) !important; color: #FB7185 !important; }
+    [data-theme="dark"] .tile-indigo  { background: rgba(79, 70, 229, 0.22) !important;  border-color: rgba(129, 140, 248, 0.40) !important; color: #818CF8 !important; }
+    [data-theme="dark"] .tile-amber   { background: rgba(217, 119, 6, 0.20) !important;  border-color: rgba(251, 191, 36, 0.38) !important;  color: #FBBF24 !important; }
+    [data-theme="dark"] .tile-teal    { background: rgba(13, 148, 136, 0.20) !important; border-color: rgba(45, 212, 191, 0.38) !important;  color: #2DD4BF !important; }
+    [data-theme="dark"] .tile-purple  { background: rgba(126, 34, 206, 0.20) !important; border-color: rgba(192, 132, 252, 0.38) !important; color: #C084FC !important; }
+    [data-theme="dark"] .tile-blue    { background: rgba(29, 78, 216, 0.22) !important;  border-color: rgba(96, 165, 250, 0.40) !important;  color: #60A5FA !important; }
+    [data-theme="dark"] .tile-pink    { background: rgba(219, 39, 119, 0.20) !important; border-color: rgba(244, 114, 182, 0.38) !important; color: #F472B6 !important; }
+    [data-theme="dark"] .tile-slate   { background: rgba(51, 65, 85, 0.55) !important;   border-color: rgba(148, 163, 184, 0.40) !important; color: #F8FAFC !important; }
 
-    .icon-box i {
+    .icon-box i,
+    .icon-box svg {
       color: inherit !important;
+      fill: currentColor !important;
+    }
+
+    /* Gallery Card Hover Overlay (Never uses bg-slate-950 class name so global.css doesn't turn it white!) */
+    .gallery-hover-layer {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(11, 15, 25, 0);
+      transition: background-color 0.25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .group:hover .gallery-hover-layer {
+      background-color: rgba(11, 15, 25, 0.42);
+    }
+
+    /* Video Highlight Gradient Overlay */
+    .video-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(11,15,25,0.10) 0%, rgba(11,15,25,0.45) 50%, rgba(11,15,25,0.92) 100%);
     }
 
     /* Status Badges */
@@ -243,7 +270,7 @@
       position: fixed;
       inset: 0;
       z-index: 60;
-      background-color: rgba(11, 15, 25, 0.72);
+      background-color: rgba(11, 15, 25, 0.76);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       opacity: 0;
@@ -268,6 +295,35 @@
     }
     .dc-modal-backdrop.active .dc-modal-panel {
       transform: translateY(0) scale(1);
+    }
+
+    /* Service Card inside Popup Modal — Unclipped, Vivid Picture Header + Crisp Body */
+    .dc-service-item {
+      background-color: var(--dc-card-bg);
+      border: 1px solid var(--dc-card-border);
+      border-radius: 1.25rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--dc-card-shadow);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+    .dc-service-item:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+    .dc-service-photo-wrap {
+      position: relative;
+      height: 11.5rem;
+      width: 100%;
+      overflow: hidden;
+      background-color: #0B0F19;
+    }
+    .dc-service-photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(11,15,25,0.18) 0%, rgba(11,15,25,0.45) 50%, rgba(11,15,25,0.92) 100%);
     }
 
     .no-scrollbar::-webkit-scrollbar {
@@ -306,9 +362,9 @@
           <i class="fas fa-qrcode" style="color: var(--accent);"></i>
           <span class="hidden sm:inline">QR Code</span>
         </button>
-        <!-- Official Theme Toggle Button from global.js -->
-        <button class="theme-toggle-btn w-9 h-9 rounded-xl bg-white border border-slate-300 flex items-center justify-center transition-all shadow-sm" title="Toggle Light / Dark Theme">
-          <i class="fas fa-moon text-indigo-600 text-sm"></i>
+        <!-- Theme Toggle Button -->
+        <button onclick="toggleCardTheme()" class="theme-toggle-btn w-9 h-9 rounded-xl bg-white border border-slate-300 flex items-center justify-center transition-all shadow-sm" title="Toggle Light / Dark Theme">
+          <i id="dc-theme-icon" class="fas fa-moon text-indigo-600 text-sm"></i>
         </button>
       </div>
     </div>
@@ -326,30 +382,30 @@
         <!-- ============================================================== -->
         <div class="lg:col-span-3 dc-card rounded-3xl overflow-hidden flex flex-col">
 
-          <!-- TOP COVER BANNER (Responsive HTML + Photo so text is never cropped!) -->
+          <!-- TOP COVER BANNER -->
           <div class="relative h-44 sm:h-48 w-full overflow-hidden select-none" style="background: #0B0F19;">
-            <img src="assets/slide1.jpg" alt="Nellys Tech Cover" class="w-full h-full object-cover opacity-55">
+            <img src="assets/slide1.jpg" alt="Nellys Tech Cover" class="w-full h-full object-cover opacity-60">
             <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(11,15,25,0.92) 0%, rgba(11,15,25,0.72) 55%, rgba(6,182,212,0.28) 100%);"></div>
 
             <!-- Banner Content -->
             <div class="absolute inset-0 p-4 flex flex-col justify-between">
               <div class="flex items-center justify-between gap-2">
-                <span class="px-2.5 py-0.5 rounded-full text-[9px] font-extrabold uppercase tracking-wider" style="background: rgba(6,182,212,0.22); color: #38BDF8; border: 1px solid rgba(56,189,248,0.4);">
+                <span class="px-2.5 py-0.5 rounded-full text-[9px] font-extrabold uppercase tracking-wider" style="background: rgba(6,182,212,0.22); color: #38BDF8 !important; border: 1px solid rgba(56,189,248,0.4);">
                   BUILD &bull; CONNECT &bull; GROW
                 </span>
-                <span class="px-2.5 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider" style="background: rgba(15,23,42,0.85); color: #E2E8F0; border: 1px solid rgba(148,163,184,0.3);">
-                  <i class="fas fa-location-dot" style="color: #38BDF8;"></i> Kowdiar, TVM
+                <span class="px-2.5 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider" style="background: rgba(15,23,42,0.85); color: #E2E8F0 !important; border: 1px solid rgba(148,163,184,0.3);">
+                  <i class="fas fa-location-dot" style="color: #38BDF8 !important;"></i> Kowdiar, TVM
                 </span>
               </div>
 
               <div class="pb-7">
-                <p class="text-[10px] font-extrabold uppercase tracking-widest" style="color: #38BDF8;">
+                <p class="text-[10px] font-extrabold uppercase tracking-widest" style="color: #38BDF8 !important;">
                   One Partner &bull; Every Possibility
                 </p>
-                <h2 class="text-base sm:text-lg font-extrabold leading-tight mt-0.5" style="color: #FFFFFF !important;">
+                <div class="text-base sm:text-lg font-extrabold leading-tight mt-0.5" style="color: #FFFFFF !important;">
                   360° Enterprise IT &amp;<br>
-                  <span style="color: #38BDF8;">Digital Branding</span>
-                </h2>
+                  <span style="color: #38BDF8 !important;">Digital Branding</span>
+                </div>
               </div>
             </div>
 
@@ -360,7 +416,7 @@
           <!-- OVERLAPPING CIRCULAR LOGO BADGE -->
           <div class="relative -mt-12 flex justify-center z-10">
             <div class="w-24 h-24 rounded-full dc-logo-badge p-2 flex flex-col items-center justify-center">
-              <img src="nellys-logo-light.svg" alt="Nellys Tech Logo" class="w-14 h-auto">
+              <img id="profile-logo-img" src="nellys-logo-light.svg" alt="Nellys Tech Logo" class="w-14 h-auto">
               <span class="dc-logo-label text-[8px] font-extrabold tracking-wider uppercase mt-1">NELLYS TECH</span>
             </div>
           </div>
@@ -370,9 +426,9 @@
             <div>
               <!-- Company Name + Verified Tick -->
               <div class="flex items-center justify-center gap-1.5 mt-1">
-                <h1 class="dc-heading text-xl sm:text-[21px] font-extrabold tracking-tight">
+                <div class="dc-heading text-xl sm:text-[21px] font-extrabold tracking-tight">
                   Nellys Tech Pvt. Ltd.
-                </h1>
+                </div>
                 <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-sky-500 text-white text-[10px] shrink-0 shadow-sm" title="Verified Corporate Entity">
                   <i class="fas fa-check" style="color: #FFFFFF !important;"></i>
                 </span>
@@ -391,9 +447,9 @@
 
               <!-- ABOUT BUSINESS SECTION -->
               <div class="mt-5 text-left border-t pt-4" style="border-color: var(--dc-card-border);">
-                <h2 class="dc-section-title mb-2">
+                <div class="dc-section-title mb-2">
                   ABOUT BUSINESS
-                </h2>
+                </div>
                 <p class="dc-text text-xs sm:text-[13px] leading-relaxed">
                   <strong class="dc-heading">"Technology that runs your business. Visibility that grows it."</strong> We unify <span class="font-bold" style="color: var(--accent);">Digital Branding (10 Services)</span> and <span class="font-bold" style="color: var(--accent-indigo);">360° IT &amp; Business Solutions (10 Services)</span> under one expert team in Kowdiar, Thiruvananthapuram.
                 </p>
@@ -437,7 +493,7 @@
               </button>
             </div>
 
-            <!-- MOBILE-ONLY 2x2 QUICK ACTION BUTTONS (Matches Mobile Reference Layout!) -->
+            <!-- MOBILE-ONLY 2x2 QUICK ACTION BUTTONS -->
             <div class="grid grid-cols-2 gap-2.5 mt-5 lg:hidden">
               <button onclick="openDcModal('services-modal')" class="btn-nellys py-3 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-2">
                 <i class="fas fa-briefcase"></i>
@@ -468,9 +524,9 @@
           <!-- DESKTOP TOP GALLERY STRIP -->
           <div class="hidden lg:block dc-card rounded-3xl p-5">
             <div class="flex items-center justify-between mb-3.5">
-              <h2 class="dc-section-title flex items-center gap-2">
+              <div class="dc-section-title flex items-center gap-2">
                 <i class="fas fa-images"></i> GALLERY
-              </h2>
+              </div>
               <div class="flex items-center gap-2">
                 <button onclick="scrollGallery(-260)" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center text-xs hover:opacity-80 transition" title="Scroll Left">
                   <i class="fas fa-chevron-left"></i>
@@ -490,9 +546,9 @@
           <!-- CONTACT & LINKS ICON GRID CARD -->
           <div class="dc-card rounded-3xl p-5 sm:p-6">
             <div class="flex items-center justify-between mb-5">
-              <h2 class="dc-section-title">
+              <div class="dc-section-title">
                 CONTACT &amp; LINKS
-              </h2>
+              </div>
               <span class="dc-muted text-[11px] font-semibold">Tap any icon to connect</span>
             </div>
 
@@ -532,7 +588,7 @@
               </a>
 
               <!-- 5. Bank / Corporate Info -->
-              <button onclick="openDcModal('bank-modal')" class="icon-tile flex flex-col items-center">
+              <button type="button" onclick="openDcModal('bank-modal')" class="icon-tile flex flex-col items-center">
                 <div class="icon-box tile-amber w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
                   <i class="fas fa-building-columns"></i>
                 </div>
@@ -540,7 +596,7 @@
               </button>
 
               <!-- 6. Address -->
-              <button onclick="openDcModal('location-modal')" class="icon-tile flex flex-col items-center">
+              <button type="button" onclick="openDcModal('location-modal')" class="icon-tile flex flex-col items-center">
                 <div class="icon-box tile-rose w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
                   <i class="fas fa-location-dot"></i>
                 </div>
@@ -556,7 +612,7 @@
               </a>
 
               <!-- 8. BOOK NOW -->
-              <button onclick="openDcModal('appointment-modal')" class="icon-tile flex flex-col items-center">
+              <button type="button" onclick="openDcModal('appointment-modal')" class="icon-tile flex flex-col items-center">
                 <div class="icon-box tile-teal w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
                   <i class="far fa-calendar-check"></i>
                 </div>
@@ -564,20 +620,20 @@
               </button>
 
               <!-- 9. Auto Reply (Quick WhatsApp Inquiry) -->
-              <button onclick="openDcModal('autoreply-modal')" class="icon-tile flex flex-col items-center">
+              <button type="button" onclick="openDcModal('autoreply-modal')" class="icon-tile flex flex-col items-center">
                 <div class="icon-box tile-emerald w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
                   <i class="fas fa-reply-all"></i>
                 </div>
                 <span class="icon-tile-label">Auto Reply</span>
               </button>
 
-              <!-- 10. Copy Link -->
-              <button onclick="copyCardLink()" class="icon-tile flex flex-col items-center">
+              <!-- 10. Copy Link (Properly closed </button>!) -->
+              <button type="button" onclick="copyCardLink()" class="icon-tile flex flex-col items-center">
                 <div class="icon-box tile-purple w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
                   <i class="far fa-copy"></i>
                 </div>
                 <span class="icon-tile-label">Copy Link</span>
-              </a>
+              </button>
 
               <!-- 11. Facebook -->
               <a href="https://facebook.com" target="_blank" rel="noopener" class="icon-tile flex flex-col items-center">
@@ -614,13 +670,13 @@
               <!-- 15. X (Twitter) -->
               <a href="https://x.com" target="_blank" rel="noopener" class="icon-tile flex flex-col items-center">
                 <div class="icon-box tile-slate w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
-                  <i class="fab fa-x-twitter"></i>
+                  <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                 </div>
                 <span class="icon-tile-label">X</span>
               </a>
 
               <!-- 16. QR Code -->
-              <button onclick="openDcModal('qr-modal')" class="icon-tile flex flex-col items-center">
+              <button type="button" onclick="openDcModal('qr-modal')" class="icon-tile flex flex-col items-center">
                 <div class="icon-box tile-sky w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
                   <i class="fas fa-qrcode"></i>
                 </div>
@@ -628,7 +684,7 @@
               </button>
 
               <!-- 17. Install / Save App -->
-              <button onclick="openDcModal('install-modal')" class="icon-tile flex flex-col items-center">
+              <button type="button" onclick="openDcModal('install-modal')" class="icon-tile flex flex-col items-center">
                 <div class="icon-box tile-indigo w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
                   <i class="fas fa-mobile-screen-button"></i>
                 </div>
@@ -666,7 +722,7 @@
 
           <!-- BUSINESS HOURS CARD -->
           <div class="dc-card rounded-2xl px-5 py-4">
-            <button onclick="toggleHours()" class="w-full flex items-center justify-between text-left gap-2">
+            <button type="button" onclick="toggleHours()" class="w-full flex items-center justify-between text-left gap-2">
               <div class="flex items-center gap-2.5">
                 <div class="w-8 h-8 rounded-full tile-sky flex items-center justify-center text-sm shrink-0">
                   <i class="far fa-clock"></i>
@@ -698,21 +754,21 @@
 
           <!-- QUICK ACTIONS CARD (Desktop Right Column) -->
           <div class="hidden lg:block dc-card rounded-3xl p-5 space-y-3">
-            <h2 class="dc-section-title mb-1">
+            <div class="dc-section-title mb-1">
               QUICK ACTIONS
-            </h2>
+            </div>
 
-            <button onclick="downloadVCard()" class="btn-nellys w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2.5">
+            <button type="button" onclick="downloadVCard()" class="btn-nellys w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2.5">
               <i class="fas fa-user-plus"></i>
               <span>Save Contact</span>
             </button>
 
-            <button onclick="openDcModal('location-modal')" class="btn-nellys w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2.5">
+            <button type="button" onclick="openDcModal('location-modal')" class="btn-nellys w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2.5">
               <i class="fas fa-location-dot"></i>
               <span>Location</span>
             </button>
 
-            <button onclick="openDcModal('services-modal')" class="btn-nellys w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-between">
+            <button type="button" onclick="openDcModal('services-modal')" class="btn-nellys w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-between">
               <span class="w-4"></span>
               <span class="flex items-center gap-2.5">
                 <i class="fas fa-briefcase"></i>
@@ -721,12 +777,12 @@
               <i class="fas fa-chevron-right text-xs"></i>
             </button>
 
-            <button onclick="openDcModal('appointment-modal')" class="btn-nellys w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2.5">
+            <button type="button" onclick="openDcModal('appointment-modal')" class="btn-nellys w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2.5">
               <i class="far fa-calendar-check"></i>
               <span>Book Appointment</span>
             </button>
 
-            <button onclick="openDcModal('pay-modal')" class="btn-nellys w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2.5">
+            <button type="button" onclick="openDcModal('pay-modal')" class="btn-nellys w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2.5">
               <i class="fas fa-indian-rupee-sign"></i>
               <span>Pay Now / Quote</span>
             </button>
@@ -736,9 +792,9 @@
           <div class="lg:hidden space-y-5 mt-1">
             <div class="dc-card rounded-3xl p-4 sm:p-5">
               <div class="flex items-center justify-between mb-3.5">
-                <h2 class="dc-heading text-sm font-extrabold">
+                <div class="dc-heading text-sm font-extrabold">
                   Image Gallery
-                </h2>
+                </div>
                 <span class="text-[11px] font-bold" style="color: var(--accent);">Tap to zoom</span>
               </div>
 
@@ -747,7 +803,7 @@
               </div>
 
               <div class="mt-4 text-center">
-                <button id="load-more-gallery-btn" onclick="toggleMobileGalleryAll()" class="px-5 py-2 rounded-full dc-pill text-xs font-extrabold transition">
+                <button id="load-more-gallery-btn" type="button" onclick="toggleMobileGalleryAll()" class="px-5 py-2 rounded-full dc-pill text-xs font-extrabold transition">
                   + Load More Images
                 </button>
               </div>
@@ -756,32 +812,32 @@
             <!-- Mobile Video / Studio Capability Highlights -->
             <div class="dc-card rounded-3xl p-4 sm:p-5">
               <div class="flex items-center justify-between mb-3.5">
-                <h2 class="dc-heading text-sm font-extrabold">
+                <div class="dc-heading text-sm font-extrabold">
                   Video &amp; Studio Highlights
-                </h2>
-                <button onclick="openDcModal('services-modal')" class="text-[11px] font-extrabold" style="color: var(--accent);">
+                </div>
+                <button type="button" onclick="openDcModal('services-modal')" class="text-[11px] font-extrabold" style="color: var(--accent);">
                   Explore All 20 &rarr;
                 </button>
               </div>
               <div class="grid grid-cols-2 gap-3">
                 <div onclick="openServiceDetail(6)" class="relative rounded-2xl overflow-hidden aspect-[4/5] group cursor-pointer border" style="border-color: var(--dc-card-border);">
                   <img src="assets/services/service-06.jpg" alt="Podcasting & Audio Production" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent flex flex-col justify-end p-3">
+                  <div class="video-card-overlay flex flex-col justify-end p-3">
                     <div class="w-9 h-9 rounded-full bg-cyan-500 text-white flex items-center justify-center mb-auto self-end shadow-md">
                       <i class="fas fa-play text-xs ml-0.5" style="color: #FFFFFF !important;"></i>
                     </div>
                     <span class="text-[10px] font-bold uppercase" style="color: #38BDF8 !important;">Studio 06</span>
-                    <h4 class="text-xs font-bold leading-snug" style="color: #FFFFFF !important;">Podcasting &amp; Audio Production</h4>
+                    <div class="text-xs font-bold leading-snug" style="color: #FFFFFF !important;">Podcasting &amp; Audio Production</div>
                   </div>
                 </div>
                 <div onclick="openServiceDetail(7)" class="relative rounded-2xl overflow-hidden aspect-[4/5] group cursor-pointer border" style="border-color: var(--dc-card-border);">
                   <img src="assets/services/service-07.jpg" alt="4K Video Marketing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent flex flex-col justify-end p-3">
+                  <div class="video-card-overlay flex flex-col justify-end p-3">
                     <div class="w-9 h-9 rounded-full bg-indigo-500 text-white flex items-center justify-center mb-auto self-end shadow-md">
                       <i class="fas fa-play text-xs ml-0.5" style="color: #FFFFFF !important;"></i>
                     </div>
                     <span class="text-[10px] font-bold uppercase" style="color: #818CF8 !important;">Studio 07</span>
-                    <h4 class="text-xs font-bold leading-snug" style="color: #FFFFFF !important;">4K Video Marketing &amp; Brand Films</h4>
+                    <div class="text-xs font-bold leading-snug" style="color: #FFFFFF !important;">4K Video Marketing &amp; Brand Films</div>
                   </div>
                 </div>
               </div>
@@ -790,24 +846,24 @@
 
           <!-- SOCIAL SHARE CARD -->
           <div class="dc-card rounded-3xl p-5">
-            <h2 class="dc-section-title mb-3.5">
+            <div class="dc-section-title mb-3.5">
               SOCIAL SHARE
-            </h2>
+            </div>
             <div class="flex items-center justify-between gap-2">
-              <button onclick="shareCard('whatsapp')" class="icon-box tile-emerald w-11 h-11 rounded-full flex items-center justify-center text-lg transition hover:scale-110 shadow-sm" title="Share on WhatsApp">
+              <button type="button" onclick="shareCard('whatsapp')" class="icon-box tile-emerald w-11 h-11 rounded-full flex items-center justify-center text-lg transition hover:scale-110 shadow-sm" title="Share on WhatsApp">
                 <i class="fab fa-whatsapp"></i>
               </button>
-              <button onclick="shareCard('instagram')" class="icon-box tile-pink w-11 h-11 rounded-full flex items-center justify-center text-lg transition hover:scale-110 shadow-sm" title="Share on Instagram">
+              <button type="button" onclick="shareCard('instagram')" class="icon-box tile-pink w-11 h-11 rounded-full flex items-center justify-center text-lg transition hover:scale-110 shadow-sm" title="Share on Instagram">
                 <i class="fab fa-instagram"></i>
               </button>
-              <button onclick="shareCard('facebook')" class="icon-box tile-blue w-11 h-11 rounded-full flex items-center justify-center text-lg transition hover:scale-110 shadow-sm" title="Share on Facebook">
+              <button type="button" onclick="shareCard('facebook')" class="icon-box tile-blue w-11 h-11 rounded-full flex items-center justify-center text-lg transition hover:scale-110 shadow-sm" title="Share on Facebook">
                 <i class="fab fa-facebook-f"></i>
               </button>
-              <button onclick="shareCard('linkedin')" class="icon-box tile-sky w-11 h-11 rounded-full flex items-center justify-center text-lg transition hover:scale-110 shadow-sm" title="Share on LinkedIn">
+              <button type="button" onclick="shareCard('linkedin')" class="icon-box tile-sky w-11 h-11 rounded-full flex items-center justify-center text-lg transition hover:scale-110 shadow-sm" title="Share on LinkedIn">
                 <i class="fab fa-linkedin-in"></i>
               </button>
-              <button onclick="shareCard('twitter')" class="icon-box tile-slate w-11 h-11 rounded-full flex items-center justify-center text-lg transition hover:scale-110 shadow-sm" title="Share on X">
-                <i class="fab fa-x-twitter"></i>
+              <button type="button" onclick="shareCard('twitter')" class="icon-box tile-slate w-11 h-11 rounded-full flex items-center justify-center text-lg transition hover:scale-110 shadow-sm" title="Share on X">
+                <svg viewBox="0 0 24 24" class="w-4 h-4 fill-current" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               </button>
             </div>
           </div>
@@ -821,17 +877,17 @@
     <div class="mt-5 px-5 py-3.5 rounded-2xl dc-card flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
       <p class="dc-muted">&copy; 2026 <strong class="dc-heading">Nellys Tech Private Limited</strong>. Kowdiar, Thiruvananthapuram.</p>
       <div class="flex flex-wrap items-center gap-4 font-bold dc-text">
-        <button onclick="openDcModal('services-modal')" class="hover:underline" style="color: var(--accent);">Our 20 Services</button>
+        <button type="button" onclick="openDcModal('services-modal')" class="hover:underline" style="color: var(--accent);">Our 20 Services</button>
         <span class="dc-muted">|</span>
-        <button onclick="openDcModal('about-modal')" class="hover:underline">6 Promises &amp; Charter</button>
+        <button type="button" onclick="openDcModal('about-modal')" class="hover:underline">6 Promises &amp; Charter</button>
         <span class="dc-muted">|</span>
-        <button onclick="openDcModal('pay-modal')" class="hover:underline">Create Quotation</button>
+        <button type="button" onclick="openDcModal('pay-modal')" class="hover:underline">Create Quotation</button>
       </div>
     </div>
   </main>
 
   <!-- ============================================================================ -->
-  <!-- POPUP MODAL 1: OUR 20 CONNECTED SERVICES (USES GLOBAL.CSS PHOTO CARDS!)      -->
+  <!-- POPUP MODAL 1: OUR 20 CONNECTED SERVICES (FULL-HEIGHT UNCLIPPED CARDS!)      -->
   <!-- ============================================================================ -->
   <div id="services-modal" class="dc-modal-backdrop">
     <div class="dc-modal-panel rounded-3xl max-w-6xl w-full max-h-[92vh] flex flex-col overflow-hidden">
@@ -844,10 +900,10 @@
           </div>
           <div>
             <span class="text-[10px] font-bold uppercase tracking-widest block" style="color: #38BDF8 !important;">Two Strengths &bull; One Direction</span>
-            <h3 class="text-lg sm:text-2xl font-extrabold leading-tight" style="color: #FFFFFF !important;">Our 20 Connected Services</h3>
+            <div class="text-lg sm:text-2xl font-extrabold leading-tight" style="color: #FFFFFF !important;">Our 20 Connected Services</div>
           </div>
         </div>
-        <button onclick="closeDcModal('services-modal')" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-lg transition shrink-0" style="color: #FFFFFF !important;">
+        <button type="button" onclick="closeDcModal('services-modal')" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-lg transition shrink-0" style="color: #FFFFFF !important;">
           <i class="fas fa-xmark" style="color: #FFFFFF !important;"></i>
         </button>
       </div>
@@ -855,13 +911,13 @@
       <!-- Filter Tabs & Search Bar -->
       <div class="px-5 sm:px-7 py-3.5 border-b flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 shrink-0" style="background: var(--dc-surface-subtle); border-color: var(--dc-card-border);">
         <div class="flex flex-wrap items-center gap-2">
-          <button onclick="filterServices('all')" id="srv-tab-all" class="srv-tab btn-nellys px-4 py-2 rounded-xl text-xs font-bold">
+          <button type="button" onclick="filterServices('all')" id="srv-tab-all" class="srv-tab btn-nellys px-4 py-2 rounded-xl text-xs font-bold">
             <span>All 20 Services</span>
           </button>
-          <button onclick="filterServices('branding')" id="srv-tab-branding" class="srv-tab dc-card px-4 py-2 rounded-xl text-xs font-bold dc-heading">
+          <button type="button" onclick="filterServices('branding')" id="srv-tab-branding" class="srv-tab dc-card px-4 py-2 rounded-xl text-xs font-bold dc-heading">
             <i class="fas fa-bullhorn mr-1" style="color: #06B6D4;"></i> Digital Branding (10)
           </button>
-          <button onclick="filterServices('it')" id="srv-tab-it" class="srv-tab dc-card px-4 py-2 rounded-xl text-xs font-bold dc-heading">
+          <button type="button" onclick="filterServices('it')" id="srv-tab-it" class="srv-tab dc-card px-4 py-2 rounded-xl text-xs font-bold dc-heading">
             <i class="fas fa-laptop-code mr-1" style="color: #6366F1;"></i> 360° IT Solutions (10)
           </button>
         </div>
@@ -872,9 +928,11 @@
         </div>
       </div>
 
-      <!-- Services Cards Grid (Using .service-card from global.css with real background photos!) -->
-      <div id="services-modal-grid" class="p-5 sm:p-7 overflow-y-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Populated dynamically with all 20 services -->
+      <!-- Separate Scroll Wrapper around Grid so cards NEVER squish! -->
+      <div class="flex-1 overflow-y-auto p-5 sm:p-7">
+        <div id="services-modal-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Populated dynamically with all 20 services -->
+        </div>
       </div>
 
       <!-- Modal Footer -->
@@ -886,7 +944,7 @@
           <a href="tel:04712720004" class="flex-1 sm:flex-initial text-center px-4 py-2.5 rounded-xl dc-card font-bold dc-heading">
             <i class="fas fa-phone mr-1 text-emerald-500"></i> 0471 2720004
           </a>
-          <button onclick="closeDcModal('services-modal'); openDcModal('appointment-modal');" class="flex-1 sm:flex-initial btn-nellys px-5 py-2.5 rounded-xl font-bold">
+          <button type="button" onclick="closeDcModal('services-modal'); openDcModal('appointment-modal');" class="flex-1 sm:flex-initial btn-nellys px-5 py-2.5 rounded-xl font-bold">
             <span>Book Strategy Call &rarr;</span>
           </button>
         </div>
@@ -899,15 +957,15 @@
   <!-- ============================================================================ -->
   <div id="service-detail-modal" class="dc-modal-backdrop" style="z-index: 70;">
     <div class="dc-modal-panel rounded-3xl max-w-xl w-full overflow-hidden">
-      <div class="relative h-52 bg-slate-900">
+      <div class="relative h-52" style="background: #0B0F19;">
         <img id="detail-service-img" src="assets/services/service-01.jpg" alt="Service" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/45 to-transparent"></div>
-        <button onclick="closeDcModal('service-detail-modal')" class="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-slate-900/80 hover:bg-slate-900 flex items-center justify-center" style="color: #FFFFFF !important;">
+        <div class="dc-service-photo-overlay"></div>
+        <button type="button" onclick="closeDcModal('service-detail-modal')" class="absolute top-3.5 right-3.5 w-9 h-9 rounded-full flex items-center justify-center" style="background: rgba(11,15,25,0.8); color: #FFFFFF !important;">
           <i class="fas fa-xmark" style="color: #FFFFFF !important;"></i>
         </button>
         <div class="absolute bottom-4 left-5 right-5">
           <span id="detail-service-badge" class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-cyan-500" style="color: #FFFFFF !important;">01 / Digital Branding</span>
-          <h3 id="detail-service-title" class="text-xl sm:text-2xl font-extrabold mt-1" style="color: #FFFFFF !important;">Brand Identity &amp; Logo Design</h3>
+          <div id="detail-service-title" class="text-xl sm:text-2xl font-extrabold mt-1" style="color: #FFFFFF !important;">Brand Identity &amp; Logo Design</div>
           <p id="detail-service-headline" class="text-xs font-semibold" style="color: #38BDF8 !important;">Look Like Who You Really Are</p>
         </div>
       </div>
@@ -923,7 +981,7 @@
             <i class="fab fa-whatsapp text-base" style="color: #FFFFFF !important;"></i>
             <span style="color: #FFFFFF !important;">Enquire on WhatsApp</span>
           </a>
-          <button onclick="closeDcModal('service-detail-modal'); openDcModal('appointment-modal');" class="flex-1 btn-nellys py-3 px-4 rounded-xl font-bold text-xs">
+          <button type="button" onclick="closeDcModal('service-detail-modal'); openDcModal('appointment-modal');" class="flex-1 btn-nellys py-3 px-4 rounded-xl font-bold text-xs">
             <span>Request Proposal &rarr;</span>
           </button>
         </div>
@@ -935,32 +993,32 @@
   <!-- POPUP MODAL 3: GALLERY IMAGE LIGHTBOX                                        -->
   <!-- ============================================================================ -->
   <div id="lightbox-modal" class="dc-modal-backdrop" style="z-index: 70;">
-    <div class="dc-modal-panel relative max-w-2xl w-full rounded-3xl overflow-hidden" style="background: #0B0F19; border-color: #1E293B;">
+    <div class="dc-modal-panel relative max-w-2xl w-full rounded-3xl overflow-hidden" style="background: #0B0F19 !important; border-color: #1E293B !important;">
       <div class="flex items-center justify-between px-5 py-3.5 border-b border-slate-800">
         <div>
           <span id="lightbox-tag" class="text-[10px] font-bold uppercase tracking-widest block" style="color: #38BDF8 !important;">Nellys Tech Showcase</span>
-          <h4 id="lightbox-title" class="text-sm font-bold" style="color: #FFFFFF !important;">Grow Your Business Digitally</h4>
+          <div id="lightbox-title" class="text-sm font-bold" style="color: #FFFFFF !important;">Grow Your Business Digitally</div>
         </div>
-        <button onclick="closeDcModal('lightbox-modal')" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center" style="color: #FFFFFF !important;">
+        <button type="button" onclick="closeDcModal('lightbox-modal')" class="w-8 h-8 rounded-full flex items-center justify-center" style="background: #1E293B; color: #FFFFFF !important;">
           <i class="fas fa-xmark" style="color: #FFFFFF !important;"></i>
         </button>
       </div>
-      <div class="relative bg-slate-950 flex items-center justify-center">
+      <div class="relative flex items-center justify-center" style="background: #030712;">
         <img id="lightbox-img" src="assets/gallery/poster-01.jpg" alt="Gallery Preview" class="max-h-[70vh] w-auto object-contain mx-auto">
-        <button onclick="stepLightbox(-1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/85 hover:bg-cyan-600 flex items-center justify-center transition" style="color: #FFFFFF !important;">
+        <button type="button" onclick="stepLightbox(-1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full hover:bg-cyan-600 flex items-center justify-center transition" style="background: rgba(15,23,42,0.85); color: #FFFFFF !important;">
           <i class="fas fa-chevron-left" style="color: #FFFFFF !important;"></i>
         </button>
-        <button onclick="stepLightbox(1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/85 hover:bg-cyan-600 flex items-center justify-center transition" style="color: #FFFFFF !important;">
+        <button type="button" onclick="stepLightbox(1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full hover:bg-cyan-600 flex items-center justify-center transition" style="background: rgba(15,23,42,0.85); color: #FFFFFF !important;">
           <i class="fas fa-chevron-right" style="color: #FFFFFF !important;"></i>
         </button>
       </div>
       <div class="px-5 py-3.5 border-t border-slate-800 flex items-center justify-between gap-3" style="background: #0B0F19;">
         <span id="lightbox-counter" class="text-xs font-mono" style="color: #94A3B8 !important;">1 / 8</span>
         <div class="flex items-center gap-2">
-          <button onclick="closeDcModal('lightbox-modal'); openDcModal('services-modal');" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold transition" style="color: #FFFFFF !important;">
+          <button type="button" onclick="closeDcModal('lightbox-modal'); openDcModal('services-modal');" class="px-4 py-2 rounded-xl text-xs font-bold transition" style="background: #1E293B; color: #FFFFFF !important;">
             All 20 Services
           </button>
-          <button onclick="closeDcModal('lightbox-modal'); openDcModal('appointment-modal');" class="btn-nellys px-4 py-2 rounded-xl text-xs font-bold">
+          <button type="button" onclick="closeDcModal('lightbox-modal'); openDcModal('appointment-modal');" class="btn-nellys px-4 py-2 rounded-xl text-xs font-bold">
             <span>Enquire Now &rarr;</span>
           </button>
         </div>
@@ -979,11 +1037,11 @@
             <i class="fas fa-location-dot"></i>
           </div>
           <div>
-            <h3 class="text-lg font-extrabold dc-heading">Registered Headquarters</h3>
+            <div class="text-lg font-extrabold dc-heading">Registered Headquarters</div>
             <p class="text-xs dc-muted">Kowdiar, Thiruvananthapuram, Kerala</p>
           </div>
         </div>
-        <button onclick="closeDcModal('location-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
+        <button type="button" onclick="closeDcModal('location-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
           <i class="fas fa-xmark"></i>
         </button>
       </div>
@@ -1011,7 +1069,7 @@
       </div>
 
       <div class="flex gap-2.5">
-        <button onclick="copyText('J-1A, TC 9/479(1) 23/2773, Jawahar Nagar, Kowdiar, Thiruvananthapuram, Kerala 695003', 'Address copied!')" class="flex-1 py-3 rounded-xl dc-pill font-bold text-xs">
+        <button type="button" onclick="copyText('J-1A, TC 9/479(1) 23/2773, Jawahar Nagar, Kowdiar, Thiruvananthapuram, Kerala 695003', 'Address copied!')" class="flex-1 py-3 rounded-xl dc-pill font-bold text-xs">
           <i class="far fa-copy mr-1"></i> Copy Address
         </button>
         <a href="https://www.google.com/maps/search/?api=1&query=Jawahar+Nagar+Kowdiar+Thiruvananthapuram+Kerala+695003" target="_blank" rel="noopener" class="flex-1 btn-nellys py-3 rounded-xl font-bold text-xs text-center">
@@ -1029,9 +1087,9 @@
       <div class="flex items-center justify-between mb-4">
         <div>
           <span class="dc-section-title text-[10px]">Let's Build Something Together</span>
-          <h3 class="text-xl font-extrabold dc-heading">Book Strategy Appointment</h3>
+          <div class="text-xl font-extrabold dc-heading">Book Strategy Appointment</div>
         </div>
-        <button onclick="closeDcModal('appointment-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
+        <button type="button" onclick="closeDcModal('appointment-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
           <i class="fas fa-xmark"></i>
         </button>
       </div>
@@ -1103,9 +1161,9 @@
       <div class="flex items-center justify-between">
         <div>
           <span class="dc-section-title text-[10px]">Payments &amp; Estimates</span>
-          <h3 class="text-xl font-extrabold dc-heading">Pay Now / Request Quotation</h3>
+          <div class="text-xl font-extrabold dc-heading">Pay Now / Request Quotation</div>
         </div>
-        <button onclick="closeDcModal('pay-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
+        <button type="button" onclick="closeDcModal('pay-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
           <i class="fas fa-xmark"></i>
         </button>
       </div>
@@ -1157,11 +1215,11 @@
             <i class="fas fa-building-columns"></i>
           </div>
           <div>
-            <h3 class="text-lg font-extrabold dc-heading">Corporate &amp; Billing Info</h3>
+            <div class="text-lg font-extrabold dc-heading">Corporate &amp; Billing Info</div>
             <p class="text-xs dc-muted">Nellys Tech Private Limited</p>
           </div>
         </div>
-        <button onclick="closeDcModal('bank-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
+        <button type="button" onclick="closeDcModal('bank-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
           <i class="fas fa-xmark"></i>
         </button>
       </div>
@@ -1202,7 +1260,7 @@
     <div class="dc-modal-panel rounded-3xl max-w-sm w-full p-6 text-center space-y-4">
       <div class="flex items-center justify-between">
         <span class="dc-section-title">Scan Digital Card</span>
-        <button onclick="closeDcModal('qr-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
+        <button type="button" onclick="closeDcModal('qr-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
           <i class="fas fa-xmark"></i>
         </button>
       </div>
@@ -1212,11 +1270,11 @@
       </div>
 
       <div>
-        <h4 class="text-base font-extrabold dc-heading">Nellys Tech Pvt. Ltd.</h4>
+        <div class="text-base font-extrabold dc-heading">Nellys Tech Pvt. Ltd.</div>
         <p class="text-xs dc-muted mt-0.5">Point your phone camera to open our card or website</p>
       </div>
 
-      <button onclick="downloadVCard()" class="btn-nellys w-full py-3 rounded-xl font-bold text-xs">
+      <button type="button" onclick="downloadVCard()" class="btn-nellys w-full py-3 rounded-xl font-bold text-xs">
         <span><i class="fas fa-user-plus mr-1"></i> Save Contact (.vcf)</span>
       </button>
     </div>
@@ -1233,11 +1291,11 @@
             <i class="fab fa-whatsapp"></i>
           </div>
           <div>
-            <h3 class="text-lg font-extrabold dc-heading">Instant Auto-Reply</h3>
+            <div class="text-lg font-extrabold dc-heading">Instant Auto-Reply</div>
             <p class="text-xs dc-muted">Send a quick message to our Kowdiar desk</p>
           </div>
         </div>
-        <button onclick="closeDcModal('autoreply-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
+        <button type="button" onclick="closeDcModal('autoreply-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
           <i class="fas fa-xmark"></i>
         </button>
       </div>
@@ -1270,14 +1328,14 @@
   <div id="review-modal" class="dc-modal-backdrop">
     <div class="dc-modal-panel rounded-3xl max-w-md w-full p-6 space-y-4 text-center">
       <div class="flex justify-end">
-        <button onclick="closeDcModal('review-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
+        <button type="button" onclick="closeDcModal('review-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
           <i class="fas fa-xmark"></i>
         </button>
       </div>
       <div class="w-14 h-14 rounded-2xl tile-amber flex items-center justify-center text-2xl mx-auto">
         <i class="fas fa-star"></i>
       </div>
-      <h3 class="text-xl font-extrabold dc-heading">Rate Your Experience</h3>
+      <div class="text-xl font-extrabold dc-heading">Rate Your Experience</div>
       <p class="text-xs dc-muted">How would you rate Nellys Tech Pvt. Ltd.?</p>
 
       <div id="star-selector" class="flex items-center justify-center gap-2 text-2xl py-1" style="color: #F59E0B;">
@@ -1304,8 +1362,8 @@
   <div id="install-modal" class="dc-modal-backdrop">
     <div class="dc-modal-panel rounded-3xl max-w-md w-full p-6 space-y-4">
       <div class="flex items-center justify-between">
-        <h3 class="text-lg font-extrabold dc-heading">Save Digital Card to Phone</h3>
-        <button onclick="closeDcModal('install-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
+        <div class="text-lg font-extrabold dc-heading">Save Digital Card to Phone</div>
+        <button type="button" onclick="closeDcModal('install-modal')" class="w-8 h-8 rounded-full dc-pill flex items-center justify-center">
           <i class="fas fa-xmark"></i>
         </button>
       </div>
@@ -1325,7 +1383,7 @@
           </div>
         </div>
       </div>
-      <button onclick="downloadVCard(); closeDcModal('install-modal');" class="btn-nellys w-full py-3 rounded-xl font-bold text-xs">
+      <button type="button" onclick="downloadVCard(); closeDcModal('install-modal');" class="btn-nellys w-full py-3 rounded-xl font-bold text-xs">
         <span><i class="fas fa-address-card mr-1.5"></i> Download Contact Card (.vcf) Now</span>
       </button>
     </div>
@@ -1339,20 +1397,20 @@
       <div class="px-6 py-4 flex items-center justify-between" style="background: #0B0F19; border-bottom: 1px solid #1E293B;">
         <div>
           <span class="text-[10px] font-bold uppercase tracking-widest block" style="color: #38BDF8 !important;">Corporate Profile 2026</span>
-          <h3 class="text-lg font-extrabold" style="color: #FFFFFF !important;">Nellys Tech Pvt. Ltd. &bull; Purpose, Made Practical</h3>
+          <div class="text-lg font-extrabold" style="color: #FFFFFF !important;">Nellys Tech Pvt. Ltd. &bull; Purpose, Made Practical</div>
         </div>
-        <button onclick="closeDcModal('about-modal')" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center" style="color: #FFFFFF !important;">
+        <button type="button" onclick="closeDcModal('about-modal')" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center" style="color: #FFFFFF !important;">
           <i class="fas fa-xmark" style="color: #FFFFFF !important;"></i>
         </button>
       </div>
       <div class="p-6 overflow-y-auto space-y-5 text-xs sm:text-sm dc-text">
         <div class="p-4 rounded-2xl dc-pill">
-          <h4 class="font-extrabold dc-heading text-base mb-1">One Partner. Every Possibility.</h4>
+          <div class="font-extrabold dc-heading text-base mb-1">One Partner. Every Possibility.</div>
           <p class="dc-text">Every business needs systems that work and people who know it exists. At Nellys Tech, our software engineers, cloud and security experts work alongside our brand, content and marketing specialists right here in Kowdiar, Thiruvananthapuram.</p>
         </div>
 
         <div>
-          <h4 class="dc-section-title mb-2.5">Six Promises We Live By</h4>
+          <div class="dc-section-title mb-2.5">Six Promises We Live By</div>
           <div class="grid sm:grid-cols-2 gap-3">
             <div class="p-3.5 rounded-xl dc-pill">
               <strong class="dc-heading block">01. Clarity</strong>
@@ -1383,9 +1441,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Nellys Tech Official Global JS -->
-  <script src="js/global.js"></script>
 
   <!-- DIGITAL CARD INTERACTIVE CONTROLLER -->
   <script>
@@ -1567,13 +1622,42 @@
     let showAllMobileGallery = false;
     let currentLightboxIndex = 0;
 
+    // Theme System (Synchronized with localStorage 'nellys_theme')
+    function applyCardTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('nellys_theme', theme);
+
+      const icon = document.getElementById('dc-theme-icon');
+      const btn = icon ? icon.closest('button') : null;
+      if (icon && btn) {
+        if (theme === 'dark') {
+          btn.className = 'theme-toggle-btn w-9 h-9 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center transition-all shadow-sm';
+          icon.className = 'fas fa-sun text-amber-400 text-sm';
+        } else {
+          btn.className = 'theme-toggle-btn w-9 h-9 rounded-xl bg-white border border-slate-300 flex items-center justify-center transition-all shadow-sm';
+          icon.className = 'fas fa-moon text-indigo-600 text-sm';
+        }
+      }
+
+      const profileLogo = document.getElementById('profile-logo-img');
+      if (profileLogo) {
+        profileLogo.src = theme === 'light' ? 'nellys-logo-light.svg' : 'nellys-logo-dark.svg';
+      }
+    }
+
+    function toggleCardTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      applyCardTheme(current === 'dark' ? 'light' : 'dark');
+    }
+
+    // Render Desktop & Mobile Galleries
     function renderGalleries() {
       const desktopTrack = document.getElementById('desktop-gallery-track');
       if (desktopTrack) {
         desktopTrack.innerHTML = galleryItems.map((item, idx) => `
           <div onclick="openLightbox(${idx})" class="shrink-0 w-36 h-36 rounded-2xl overflow-hidden border cursor-pointer group relative shadow-sm" style="border-color: var(--dc-card-border);">
             <img src="${item.src}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-            <div class="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/35 transition flex items-center justify-center">
+            <div class="gallery-hover-layer">
               <i class="fas fa-magnifying-glass-plus opacity-0 group-hover:opacity-100 transition text-lg drop-shadow" style="color: #FFFFFF !important;"></i>
             </div>
           </div>
@@ -1590,6 +1674,9 @@
       mobileGrid.innerHTML = visibleItems.map((item, idx) => `
         <div onclick="openLightbox(${idx})" class="rounded-2xl overflow-hidden border cursor-pointer group relative aspect-square shadow-sm" style="border-color: var(--dc-card-border);">
           <img src="${item.src}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <div class="gallery-hover-layer">
+            <i class="fas fa-magnifying-glass-plus opacity-0 group-hover:opacity-100 transition text-lg drop-shadow" style="color: #FFFFFF !important;"></i>
+          </div>
         </div>
       `).join('');
       if (btn) {
@@ -1626,7 +1713,7 @@
       document.getElementById('lightbox-counter').textContent = `${currentLightboxIndex + 1} / ${galleryItems.length}`;
     }
 
-    // Render 20 Services using the exact .service-card + .service-card-bg + .service-card-overlay design from global.css!
+    // Render 20 Services in Popup Modal with Vivid Unclipped Photo Banner + Full Deliverables
     function renderServicesModal(filter = 'all', query = '') {
       const grid = document.getElementById('services-modal-grid');
       if (!grid) return;
@@ -1643,44 +1730,58 @@
         return;
       }
 
-      grid.innerHTML = filtered.map(s => `
-        <div class="service-card glass-panel p-6 sm:p-7 rounded-3xl space-y-4 flex flex-col justify-between transition-all hover:-translate-y-1">
-          <div class="service-card-bg" style="background-image: url('${s.img}');"></div>
-          <div class="service-card-overlay"></div>
+      grid.innerHTML = filtered.map(s => {
+        const isBranding = s.pillar === 'branding';
+        const pillBg = isBranding ? '#0284C7' : '#4F46E5';
 
-          <div class="relative z-10 space-y-3">
-            <div class="flex justify-between items-start">
-              <span class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest bg-cyan-950 px-3 py-1 rounded-full border border-cyan-500/30">
-                ${s.num} / ${s.pillarLabel}
-              </span>
+        return `
+          <div class="dc-service-item group">
+            <div>
+              <!-- Top Photo Banner -->
+              <div onclick="openServiceDetail(${s.id})" class="dc-service-photo-wrap cursor-pointer">
+                <img src="${s.img}" alt="${s.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="dc-service-photo-overlay"></div>
+                <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider shadow" style="background: ${pillBg}; color: #FFFFFF !important;">
+                  ${s.num} &bull; ${s.pillarLabel}
+                </span>
+                <div class="absolute bottom-3 left-4 right-4">
+                  <div class="text-base sm:text-lg font-extrabold leading-snug" style="color: #FFFFFF !important;">${s.title}</div>
+                  <div class="text-xs font-semibold mt-0.5" style="color: #38BDF8 !important;">${s.headline}</div>
+                </div>
+              </div>
+
+              <!-- Card Body & Deliverables -->
+              <div class="p-4 sm:p-5 space-y-3.5">
+                <p class="text-xs dc-text leading-relaxed">
+                  ${s.desc}
+                </p>
+                <div class="p-3.5 rounded-2xl dc-pill space-y-1.5">
+                  <span class="dc-section-title block text-[10px]">What We Deliver</span>
+                  <ul class="space-y-1 text-xs dc-text font-medium">
+                    ${s.deliverables.slice(0, 4).map(d => `
+                      <li class="flex items-start gap-2">
+                        <i class="fas fa-check text-[10px] mt-1 shrink-0" style="color: var(--accent);"></i>
+                        <span>${d}</span>
+                      </li>
+                    `).join('')}
+                  </ul>
+                </div>
+              </div>
             </div>
-            <h3>${s.title}</h3>
-            <h4>${s.headline}</h4>
-            <p>${s.desc}</p>
 
-            <div class="p-4 bg-slate-900/80 rounded-2xl border border-slate-800 space-y-2">
-              <span class="block uppercase tracking-wider">What We Deliver</span>
-              <ul class="space-y-1.5">
-                ${s.deliverables.map(d => `
-                  <li><i class="fas fa-chevron-right"></i> <span>${d}</span></li>
-                `).join('')}
-              </ul>
-            </div>
-          </div>
-
-          <div class="relative z-10 pt-3 border-t border-slate-700/50 space-y-3">
-            <p class="italic">"${s.quote}"</p>
-            <div class="flex items-center gap-2.5 pt-1">
-              <button onclick="openServiceDetail(${s.id})" class="flex-1 py-2.5 px-4 rounded-xl dc-pill font-bold text-xs">
-                Quick View
+            <!-- Action Buttons -->
+            <div class="px-4 sm:px-5 pb-4 pt-1 flex items-center gap-2.5">
+              <button type="button" onclick="openServiceDetail(${s.id})" class="flex-1 py-2.5 px-3 rounded-xl dc-pill font-bold text-xs hover:opacity-85 transition">
+                View Full Details
               </button>
-              <a href="https://wa.me/914712720004?text=${encodeURIComponent(`Hello Nellys Tech, I would like to enquire about Service #${s.num}: ${s.title} (${s.headline}).`)}" target="_blank" rel="noopener" class="flex-1 btn-nellys py-2.5 px-4 rounded-xl font-bold text-xs text-center flex items-center justify-center gap-1.5">
-                <i class="fab fa-whatsapp"></i> <span>Enquire Now</span>
+              <a href="https://wa.me/914712720004?text=${encodeURIComponent(`Hello Nellys Tech, I would like to enquire about Service #${s.num}: ${s.title} (${s.headline}).`)}" target="_blank" rel="noopener" class="btn-nellys py-2.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5">
+                <i class="fab fa-whatsapp"></i>
+                <span>Enquire</span>
               </a>
             </div>
           </div>
-        </div>
-      `).join('');
+        `;
+      }).join('');
     }
 
     function filterServices(pillar) {
@@ -1781,6 +1882,22 @@
       }
     }
 
+    function showDcToast(message) {
+      let container = document.getElementById('toast-container');
+      if (!container) {
+        container = document.createElement('div');
+        container.id = 'toast-container';
+        container.className = 'fixed bottom-5 right-5 z-[9999] flex flex-col gap-2 max-w-sm';
+        document.body.appendChild(container);
+      }
+      const toast = document.createElement('div');
+      toast.className = 'bg-emerald-600 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 text-xs sm:text-sm font-bold transition-all duration-300';
+      toast.style.color = '#FFFFFF';
+      toast.innerHTML = `<i class="fas fa-circle-check text-white"></i><span style="color:#FFFFFF !important;">${message}</span>`;
+      container.appendChild(toast);
+      setTimeout(() => toast.remove(), 3200);
+    }
+
     function downloadVCard() {
       const vcard = [
         "BEGIN:VCARD",
@@ -1805,7 +1922,7 @@
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
-      if (window.showToast) showToast("Contact card (Nellys_Tech_Pvt_Ltd.vcf) downloaded!", "success");
+      showDcToast("Contact card (Nellys_Tech_Pvt_Ltd.vcf) downloaded!");
     }
 
     function copyCardLink() {
@@ -1815,9 +1932,7 @@
 
     function copyText(text, message) {
       if (navigator.clipboard) {
-        navigator.clipboard.writeText(text).then(() => {
-          if (window.showToast) showToast(message, 'success');
-        });
+        navigator.clipboard.writeText(text).then(() => showDcToast(message));
       }
     }
 
@@ -1862,7 +1977,7 @@
     function submitReview(e) {
       e.preventDefault();
       closeDcModal('review-modal');
-      if (window.showToast) showToast('Thank you for reviewing Nellys Tech Pvt. Ltd.!', 'success');
+      showDcToast('Thank you for reviewing Nellys Tech Pvt. Ltd.!');
     }
 
     function shareCard(platform) {
@@ -1881,6 +1996,8 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('nellys_theme') || 'light';
+      applyCardTheme(savedTheme);
       renderGalleries();
       renderServicesModal('all', '');
       updateOpenStatus();
