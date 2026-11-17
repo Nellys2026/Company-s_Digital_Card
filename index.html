@@ -458,24 +458,29 @@
                 <div id="about-more-content" class="hidden mt-3 pt-3 border-t border-dashed space-y-2.5 text-xs dc-text" style="border-color: var(--dc-card-border);">
                   <div>
                     <strong class="dc-section-title block text-[10px]">Our Vision</strong>
-                    <p class="mt-0.5 italic dc-text">"To be the trusted single partner that modern enterprises turn to when they refuse to let fragmented agencies compromise their growth, security, and digital presence."</p>
+                    <p class="mt-0.5 italic dc-text">"To be the trusted single partner that helps ambitious organisations build strong technology and a respected, visible brand."</p>
                   </div>
                   <div>
-                    <strong class="dc-section-title block text-[10px]">4 Synergy Pillars</strong>
+                    <strong class="dc-section-title block text-[10px]">Our Mission</strong>
                     <ul class="mt-1 space-y-1 text-[11px] dc-text">
-                      <li>&bull; <strong class="dc-heading">Build + Protect:</strong> Custom Software &amp; Zero Trust Security</li>
-                      <li>&bull; <strong class="dc-heading">Attract + Follow Up:</strong> SEO, Paid Social &amp; CRM Funnels</li>
-                      <li>&bull; <strong class="dc-heading">Define + Express:</strong> Brand Identity, UI/UX &amp; Mobile Apps</li>
-                      <li>&bull; <strong class="dc-heading">Record + Amplify:</strong> 4K Video &amp; Studio Podcasting</li>
+                      <li>&bull; <strong class="dc-heading">Build technology that fits:</strong> Reliable, secure &amp; scalable solutions.</li>
+                      <li>&bull; <strong class="dc-heading">Help you be seen and trusted:</strong> Right people find &amp; believe in you online.</li>
+                      <li>&bull; <strong class="dc-heading">Earn long-term relationships:</strong> Honest advice &amp; consistent delivery.</li>
+                      <li>&bull; <strong class="dc-heading">Leave skills behind:</strong> Capability stays in your business.</li>
                     </ul>
                   </div>
                   <div>
                     <strong class="dc-section-title block text-[10px]">6 Promises We Live By</strong>
-                    <p class="mt-0.5 text-[11px] dc-text">1. Clarity &bull; 2. Reliability &bull; 3. Security by Default &bull; 4. Business First &bull; 5. Craft &bull; 6. Partnership</p>
+                    <p class="mt-0.5 text-[11px] dc-text">01. Clarity &bull; 02. Reliability &bull; 03. Security by default &bull; 04. Business first &bull; 05. Craft &bull; 06. Partnership</p>
                   </div>
-                  <button onclick="openDcModal('about-modal')" class="text-[11px] font-bold underline block pt-1" style="color: var(--accent);">
-                    Open Full Corporate Charter &rarr;
-                  </button>
+                  <div class="flex items-center gap-3 pt-1">
+                    <button type="button" onclick="openDcModal('about-modal')" class="text-[11px] font-bold underline" style="color: var(--accent);">
+                      Full Profile &rarr;
+                    </button>
+                    <a href="assets/Nellys_Tech_Blue_Company_Profile_A4.pdf" target="_blank" class="text-[11px] font-bold underline" style="color: var(--accent-indigo);">
+                      Open 32-Page Brochure (PDF) &rarr;
+                    </a>
+                  </div>
                 </div>
 
                 <button id="read-more-btn" onclick="toggleReadMore()" class="mt-2.5 inline-flex items-center gap-1 text-xs font-extrabold transition" style="color: var(--accent);">
@@ -604,7 +609,7 @@
               </button>
 
               <!-- 7. Brochure (PDF Profile) -->
-              <a href="assets/Nellys-Tech-Company-Profile-2026.pdf" target="_blank" download="Nellys-Tech-Company-Profile-2026.pdf" class="icon-tile flex flex-col items-center">
+              <a href="assets/Nellys_Tech_Blue_Company_Profile_A4.pdf" target="_blank" rel="noopener" class="icon-tile flex flex-col items-center">
                 <div class="icon-box tile-indigo w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-sm">
                   <i class="far fa-file-pdf"></i>
                 </div>
@@ -1404,13 +1409,39 @@
         </button>
       </div>
       <div class="p-6 overflow-y-auto space-y-5 text-xs sm:text-sm dc-text">
-        <div class="p-4 rounded-2xl dc-pill">
-          <div class="font-extrabold dc-heading text-base mb-1">One Partner. Every Possibility.</div>
-          <p class="dc-text">Every business needs systems that work and people who know it exists. At Nellys Tech, our software engineers, cloud and security experts work alongside our brand, content and marketing specialists right here in Kowdiar, Thiruvananthapuram.</p>
+        <div class="p-4 rounded-2xl dc-pill flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="font-extrabold dc-heading text-base mb-1">One Partner. Every Possibility.</div>
+            <p class="dc-text">Every business needs systems that work and people who know it exists. At Nellys Tech, our software engineers, cloud and security experts work alongside our brand, content and marketing specialists right here in Kowdiar, Thiruvananthapuram.</p>
+          </div>
+          <div class="flex sm:flex-col gap-2 shrink-0">
+            <a href="assets/Nellys_Tech_Blue_Company_Profile_A4.pdf" target="_blank" rel="noopener" class="btn-nellys px-4 py-2.5 rounded-xl font-bold text-xs text-center whitespace-nowrap">
+              <span><i class="far fa-file-pdf mr-1"></i> View Brochure</span>
+            </a>
+            <a href="assets/Nellys_Tech_Blue_Company_Profile_A4.pdf" download="Nellys_Tech_Blue_Company_Profile_A4.pdf" class="dc-card px-4 py-2 rounded-xl font-bold text-xs text-center dc-heading whitespace-nowrap">
+              <i class="fas fa-download mr-1"></i> Download PDF
+            </a>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-3">
+          <div class="p-4 rounded-2xl dc-pill space-y-1.5">
+            <div class="dc-section-title">Our Vision (Page 06)</div>
+            <p class="dc-heading font-bold text-xs sm:text-sm leading-relaxed">
+              "To be the trusted single partner that helps ambitious organisations build strong technology and a respected, visible brand."
+            </p>
+          </div>
+          <div class="p-4 rounded-2xl dc-pill space-y-1.5">
+            <div class="dc-section-title">How We Deliver (Page 05)</div>
+            <p class="dc-text text-xs leading-relaxed">
+              <strong class="dc-heading">Simple. Honest. Perfection.</strong><br>
+              01. Listen and learn &bull; 02. Keep it simple &bull; 03. Be clear &bull; 04. Stay around
+            </p>
+          </div>
         </div>
 
         <div>
-          <div class="dc-section-title mb-2.5">Six Promises We Live By</div>
+          <div class="dc-section-title mb-2.5">Six Promises We Live By (Page 07)</div>
           <div class="grid sm:grid-cols-2 gap-3">
             <div class="p-3.5 rounded-xl dc-pill">
               <strong class="dc-heading block">01. Clarity</strong>
@@ -1418,24 +1449,37 @@
             </div>
             <div class="p-3.5 rounded-xl dc-pill">
               <strong class="dc-heading block">02. Reliability</strong>
-              <span class="text-xs dc-text">We do what we say, when we say it. Built for 99.99% uptime.</span>
+              <span class="text-xs dc-text">We do what we say, when we say it. If something changes, you hear it from us early.</span>
             </div>
             <div class="p-3.5 rounded-xl dc-pill">
-              <strong class="dc-heading block">03. Security by Default</strong>
-              <span class="text-xs dc-text">Zero Trust protection is built in from day one, not added at the end.</span>
+              <strong class="dc-heading block">03. Security by default</strong>
+              <span class="text-xs dc-text">Protection is built in from day one, not added at the end.</span>
             </div>
             <div class="p-3.5 rounded-xl dc-pill">
-              <strong class="dc-heading block">04. Business First</strong>
-              <span class="text-xs dc-text">Technology and marketing serve measurable commercial ROI.</span>
+              <strong class="dc-heading block">04. Business first</strong>
+              <span class="text-xs dc-text">Technology and marketing serve your goals, not the other way round.</span>
             </div>
             <div class="p-3.5 rounded-xl dc-pill">
               <strong class="dc-heading block">05. Craft</strong>
-              <span class="text-xs dc-text">Deep pride in every line of code, design, copy, and second of sound.</span>
+              <span class="text-xs dc-text">We care about the quality of every line of code, design, sentence of copy and second of sound.</span>
             </div>
             <div class="p-3.5 rounded-xl dc-pill">
               <strong class="dc-heading block">06. Partnership</strong>
               <span class="text-xs dc-text">Your success is our reference. We act like part of your team.</span>
             </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="dc-section-title mb-2.5">Why Choose Nellys Tech — One Team. Lasting Value. (Page 31)</div>
+          <div class="grid sm:grid-cols-2 gap-2.5 text-xs">
+            <div class="p-3 rounded-xl dc-pill"><strong class="dc-heading">01. Unified Growth Architecture:</strong> Technology and Business growth together</div>
+            <div class="p-3 rounded-xl dc-pill"><strong class="dc-heading">02. Business-Objective Orientation:</strong> We start with your goals, not with tools.</div>
+            <div class="p-3 rounded-xl dc-pill"><strong class="dc-heading">03. Native Security Governance:</strong> Protection is part of how we build and run things.</div>
+            <div class="p-3 rounded-xl dc-pill"><strong class="dc-heading">04. Corporate Transparency Framework:</strong> Plain language, defined scope and honest timelines.</div>
+            <div class="p-3 rounded-xl dc-pill"><strong class="dc-heading">05. Agile Operational Responsiveness:</strong> Every client gets real attention.</div>
+            <div class="p-3 rounded-xl dc-pill"><strong class="dc-heading">06. Engineered Longevity:</strong> Documentation, training and support, so you are never locked in.</div>
+            <div class="p-3 rounded-xl dc-pill sm:col-span-2"><strong class="dc-heading">07. Established Geographic Presence:</strong> In person at Kowdiar, Thiruvananthapuram and online.</div>
           </div>
         </div>
       </div>
